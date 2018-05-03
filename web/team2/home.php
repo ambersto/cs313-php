@@ -3,5 +3,5 @@
 </head>
 <body>
 	<?php include 'navbar.php';?>
-	<p style="clear: left;">Welcome. You are not logged in.</p>
+	<p style="clear: left;">Welcome. Eat potatoes.</p>
 </body>
