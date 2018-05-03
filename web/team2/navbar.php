@@ -19,6 +19,7 @@
 
 	<?php
 		$url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+		$active = 'none';
 
 		if(strpos($url, 'home') !== false)
 		{
@@ -35,8 +36,8 @@
 	?>
 
 	<ul>
-	  	<li class="<?php if ($selected == "home") echo 'active'; ?>"><a href=home.php>Home</a></li>
-  		<li class="<?php if ($selected == "about-us") echo 'active'; ?>"><a href=about-us.php>About Us</a></li>
-  		<li class="<?php if ($selected == "login") echo 'active'; ?>"><a href=login.php>Login</a></li>
+	  	<li class="<?php if ($active == "home") echo 'active'; ?>"><a href=home.php>Home</a></li>
+  		<li class="<?php if ($active == "about-us") echo 'active'; ?>"><a href=about-us.php>About Us</a></li>
+  		<li class="<?php if ($active == "login") echo 'active'; ?>"><a href=login.php>Login</a></li>
 	</ul>
 </body>
