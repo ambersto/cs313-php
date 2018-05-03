@@ -22,7 +22,6 @@ h3{
 p.body {
 	text-align: center;
 	margin: 20px 40px 20px;
-	clear: left;
 }
 #breadCrumb{
 	margin-bottom: 5px;
@@ -100,4 +99,5 @@ a.button:link{
 	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 	color: black;
 	margin-top: 40px;
+	clear: left;
 }
