@@ -1,6 +1,6 @@
 <head>
 	<style type="text/css">
-		li {
+		li.inactive {
 		    float: left;
 		}
 		a {
@@ -9,7 +9,7 @@
 		    color: white;
 		    background-color: black;
 		}
-		.active {
+		li.active {
 			color: black;
 			background: yellow;
 		}
@@ -36,8 +36,8 @@
 	?>
 
 	<ul>
-	  	<li class="<?php if ($active == "home") echo 'active'; ?>"><a href=home.php>Home</a></li>
-  		<li class="<?php if ($active == "about-us") echo 'active'; ?>"><a href=about-us.php>About Us</a></li>
-  		<li class="<?php if ($active == "login") echo 'active'; ?>"><a href=login.php>Login</a></li>
+	  	<li class="<?php if ($active == "home") echo 'active'; else echo 'inactive';?>"><a href=home.php>Home</a></li>
+  		<li class="<?php if ($active == "about-us") echo 'active';  else echo 'inactive';?>"><a href=about-us.php>About Us</a></li>
+  		<li class="<?php if ($active == "login") echo 'active';  else echo 'inactive';?>"><a href=login.php>Login</a></li>
 	</ul>
 </body>
