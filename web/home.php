@@ -11,6 +11,7 @@
   	<div id="button">Fun</div>
   	<a href="https://www.linkedin.com/in/amber-stoddard-6635b7b7/"><div id="button">About Me</div></a>
   	<div id="button">Contact Me</div>
+    <img id="profile" src="profile.png">
   	<div id="quote">"The greatest of all faults is to be conscious of none." -Thomas Carlisle</div>
   	<img id="aboutMe" src="aboutMe.png">
   	<p class="body">This is my homepage for the semester. Links to my other pages can be found to the left. Thanks for visiting!</p>
