@@ -15,8 +15,8 @@
   	<div id="quote">"The greatest of all faults is to be conscious of none." -Thomas Carlisle</div>
   	<img id="aboutMe" src="aboutMe.png">
   	<p class="body">This is my homepage for the semester. Links to my other pages can be found to the left. Thanks for visiting!</p>
-    <p class="footer">© Copyright 2018 by Amber Stoddard</p>
     <?php
       echo "Page was viewed on " . date("Y/m/d") . "<br>";
     ?>
+    <p class="footer">© Copyright 2018 by Amber Stoddard</p>
 </body>
