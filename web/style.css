@@ -1,0 +1,96 @@
+body{
+	color: #595656;
+	font-size: 20px;
+	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+}
+h1{
+	text-align: center;
+	font-size: 50px;
+	color: white;
+	font-family: Georgia, serif;
+	text-shadow: 0px 2px #757575;
+	background-color: rgb(28, 216, 175);
+	padding: 20px;
+	margin-bottom: 0px;
+}
+h3{
+	margin-top: 0px;
+	text-align: center;
+	font-size: 30px;
+	font-family: "Brush Script MT", cursive;
+}
+p.body {
+	text-align: center;
+	margin: 20px 40px 20px;
+}
+#breadCrumb{
+	margin-bottom: 20px;
+	margin-top: 7px;
+	margin-left: 10px;
+	font-size: 16px;
+}
+#home{
+	height: 40px;
+	width: 40px;
+	float: right;
+	padding-top: 10px;
+	padding-right: 10px;
+}
+#button{
+	background-color: rgb(28, 216, 175);
+	color: white;
+	text-shadow: 1px 1px gray;
+	font-weight: bold;
+	text-align: center;
+	height: 40px;
+	width: 200px;
+	float: left;
+	clear: left;
+	margin: 10px;
+	line-height: 40px;
+}
+#button:hover{
+	background-color: rgb(247, 176, 106);
+}
+#button2{
+	background-color: rgb(247, 176, 106);
+	color: white;
+	font-size: 40px;
+	text-shadow: 1px 1px gray;
+	font-weight: bold;
+	text-align: center;
+	height: 60px;
+	width: 450px;
+	margin: 10px auto 15px;
+	line-height: 60px;
+}
+#button2:hover{
+	background-color: rgb(28, 216, 175);
+}
+a.button:link{
+	text-decoration: none;
+}
+#quote{
+	background-color: rgba(117,117,117,0.75);
+	color: white;
+	width: 180px;
+	float: left;
+	clear: left;
+	text-align: center;
+	margin: 30px 10px 0px;
+	padding: 10px;
+	text-shadow: 1px 1px black;
+}
+#aboutMe{
+	height: 500px;
+	width: 800px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.footer{
+	text-align: center;
+	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+	color: black;
+	margin-top: 40px;
+}
