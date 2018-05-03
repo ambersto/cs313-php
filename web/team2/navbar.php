@@ -1,15 +1,13 @@
 <head>
 	<style type="text/css">
-		li.inactive {
+		li {
 		    float: left;
-		}
-		a {
 		    display: block;
 		    padding: 8px;
 		    color: white;
 		    background-color: black;
 		}
-		li.active {
+		.active {
 			color: black;
 			background: yellow;
 		}
