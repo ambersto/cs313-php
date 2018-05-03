@@ -70,6 +70,12 @@ p.body {
 a.button:link{
 	text-decoration: none;
 }
+#profile{
+	width: 180px;
+	height: 180px;
+	text-align: center;
+	margin: 30px 10px 0px;
+}
 #quote{
 	background-color: rgba(117,117,117,0.75);
 	color: white;
