@@ -10,7 +10,7 @@
   	<a  href="home.php"><div id="button">Home</div></a>
   	<a href="projects.html"><div id="button">Projects</div></a>
   	<div id="button">Fun</div>
-  	<a href="https://www.linkedin.com/in/amber-stoddard-6635b7b7/"><div id="button">About Me</div></a>
+  	<div id="button">About Me</div>
   	<div id="button">Contact Me</div>
   	<div id="quote">"The greatest of all faults is to be conscious of none." -Thomas Carlisle</div>
   	<img id="aboutMe" src="aboutMe.png">
