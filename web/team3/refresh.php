@@ -1,5 +1,13 @@
+<html>
+<head>
+	<title>Refresh Test</title>
+	<style type="text/css">
+		color: white;
+		background: gray;
+	</style>
+</head>
+<body>
 <?php
-
 session_start();
 
 if(isset($_SESSION["timesVisited"]))
@@ -7,6 +15,8 @@ if(isset($_SESSION["timesVisited"]))
 else
 	$_SESSION["timesVisited"] = 0;
 
-echo('<span style="color: blue; background: black;">You have visited this page '.$_SESSION["timesVisited"].' times.</span>');
-
+echo('<span style="color: blue;">You have visited this page '.$_SESSION["timesVisited"].' times.</span>');
 ?>
+</body>
+</html>
+
