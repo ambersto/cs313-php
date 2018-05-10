@@ -7,6 +7,6 @@ if(isset($_SESSION["timesVisited"]))
 else
 	$_SESSION["timesVisited"] = 0;
 
-echo('You have visited this page '.$_SESSION["timesVisited"].' times.');
+echo('<span style="color: blue; background: black;">You have visited this page '.$_SESSION["timesVisited"].' times.</span>');
 
 ?>
