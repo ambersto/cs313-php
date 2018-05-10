@@ -1,6 +1,6 @@
 <? php
 
-session_start()
+session_start();
 
 if(isset($_SESSION["timesVisited"))
 	$_SESSION["timesVisited"] += 1;
