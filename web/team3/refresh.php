@@ -1,6 +1,6 @@
 <? php
 
-echo('I\'m here!');
+echo('hello');
 
 /*session_start();
 
