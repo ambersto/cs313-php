@@ -8,6 +8,7 @@
 	<form action="add.php">
 		<input type="hidden" name="item" value="apple">
 		<input type="submit" value="Add">
+		<script type='text/javascript'>alert('Item added!');</script>
 	</form>
 </p>
 
