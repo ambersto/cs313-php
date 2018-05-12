@@ -29,4 +29,9 @@ Orange<br>
 	<button type="submit">Add to Cart</button>
 </form>
 
+<br><br>
+<form action="cart.php">
+	<button type="submit">View Cart</button>
+</form>
+
 </body>
