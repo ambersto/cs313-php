@@ -14,6 +14,8 @@ session_start();
 
 foreach ($_SESSION as $fruit => $quantity) {
 	echo "<h3>You ordered "  . $quantity . " " . $fruit . "(s).</h3>";
+	echo "<form method=\"post\" action=\"remove.php\"><input type=\"hidden\" name=\"item\" value=\"" . $fruit . "\"><button type=\"submit\">Remove from Cart</button>";
+</form>
 }
 
 ?>
