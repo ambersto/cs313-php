@@ -3,10 +3,10 @@
 	<title>Refresh Test</title>
 	<style type="text/css">
 		color: white;
-		background: gray;
 	</style>
 </head>
 <body>
+
 <?php
 session_start();
 
