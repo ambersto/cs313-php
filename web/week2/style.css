@@ -4,7 +4,6 @@ body{
 	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
 h1{
-	text-align: center;
 	font-size: 50px;
 	color: white;
 	font-family: Georgia, serif;
@@ -13,21 +12,18 @@ h1{
 	padding: 20px;
 	margin-bottom: 0px;
 }
+h2{
+	font-size: 40px;
+	font-family: Georgia, serif;
+}
 h3{
 	margin-top: 0px;
-	text-align: center;
 	font-size: 30px;
 	font-family: "Brush Script MT", cursive;
 }
-p.body {
-	text-align: center;
-	margin: 20px 40px 20px;
-}
-#breadCrumb{
-	margin-bottom: 5px;
-	margin-top: 7px;
-	margin-left: 10px;
-	font-size: 16px;
+img{
+	height: 200px;
+	width: 200px;
 }
 #home{
 	height: 40px;
@@ -69,35 +65,4 @@ p.body {
 }
 a.button:link{
 	text-decoration: none;
-}
-#profile{
-	width: 200px;
-	height: 200px;
-	float: left;
-	clear: left;
-	margin: 30px 10px 10px;
-}
-#quote{
-	background-color: rgba(117,117,117,0.75);
-	color: white;
-	width: 180px;
-	float: left;
-	clear: left;
-	text-align: center;
-	margin: 10px 10px 0px;
-	padding: 10px;
-	text-shadow: 1px 1px black;
-}
-#aboutMe{
-	height: 500px;
-	width: 800px;
-	display: block;
-	margin: 0px auto 30px;
-}
-.footer{
-	text-align: center;
-	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
-	color: black;
-	margin-top: 40px;
-	clear: left;
 }
