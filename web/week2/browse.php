@@ -23,8 +23,8 @@ Bananas<br>
 
 <form method="post" action="add.php">
 <p>Take your pick of berries:</p>
-<input type="checkbox" name="berry" value="Strawberries" id = "str"><label for="str">strawberries</label>
-<input type="checkbox" name="berry" value="Blueberries" id = "blu"><label for="blu">blueberries</label>
+<input type="checkbox" name="berry[]" value="Strawberries" id = "str"><label for="str">strawberries</label>
+<input type="checkbox" name="berry[]" value="Blueberries" id = "blu"><label for="blu">blueberries</label>
 <input type="Submit">
 </form>
 </body>
