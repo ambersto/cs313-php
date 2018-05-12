@@ -16,9 +16,15 @@ Apples<br>
 </form>
 
 Bananas<br>
-<form method="post" action="add.php">banana
+<form method="post" action="add.php">
 	<input type="hidden" name="item" value="banana">
 	<input type="Submit">
 </form>
 
+<form method="post" action="add.php">
+<p>Take your pick of berries:</p>
+<input type="radio" name="berry" value="Strawberries" id = "str"><label for="str">strawberries</label>
+<input type="radio" name="berry" value="Blueberries" id = "blu"><label for="blu">blueberries</label>
+<input type="Submit">
+</form>
 </body>
