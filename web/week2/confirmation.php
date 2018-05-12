@@ -8,6 +8,8 @@
 <h2>Your purchase has been completed!</h2>
 
 <?php
+session_start();
+
 echo "<p>Items ordered:<br><br>";
 foreach ($_SESSION as $fruit => $quantity) {
 	echo "You ordered "  . $quantity . " " . $fruit . "(s).<br>";
