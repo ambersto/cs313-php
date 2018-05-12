@@ -1,3 +1,5 @@
 <?php 
-header("Location: {$_SERVER['HTTP_REFERER']}");
+echo $_POST["name"];
+
+//header("Location: {$_SERVER['HTTP_REFERER']}");
 ?>

@@ -5,10 +5,17 @@
 <h1>Phil's Corner Market</h1>
 <h2>Select items to purchase below:</h2>
 <p>
+Apples<br>
 	<form action="add.php">
 		<input type="hidden" name="item" value="apple">
 		<input type="submit" value="Add">
-		<script type='text/javascript'>alert('Item added!');</script>
+	</form>
+</p>
+<p>
+Bananas<br>
+	<form action="add.php">
+		<input type="hidden" name="item" value="banana">
+		<input type="submit" value="Add">
 	</form>
 </p>
 
