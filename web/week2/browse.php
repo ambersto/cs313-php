@@ -7,7 +7,7 @@
 <p>
 Apples<br>
 	<form method="post" action="add.php">
-		<input type="hidden" name="item" value="apple">
+		<input type="hidden" name="apple">
 		<input type="submit" value="Add">
 	</form>
 </p>
