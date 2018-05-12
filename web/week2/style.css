@@ -13,12 +13,13 @@ div{
 }
 h1{
 	font-size: 50px;
+	text-align: center;
 	color: white;
 	font-family: Georgia, serif;
 	text-shadow: 0px 2px #757575;
 	background-color: #5fa83e;
 	padding: 20px;
-	margin: 0px;
+	margin: 0px 30px 0px;
 }
 h2{
 	font-size: 40px;
