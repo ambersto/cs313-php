@@ -12,13 +12,13 @@
 
 Apples<br>
 <form method="post" action="add.php">
-	<input type="submit" name="apple" value="Add">
+	<input type="submit" name="item" value="apple">
 </form>
 
 Bananas<br>
 <form method="post" action="add.php">
 	<input type="hidden" name="item" value="banana">
-	<input type="submit" value="Add">
+	<input type="Submit">
 </form>
 
 </body>
