@@ -4,6 +4,7 @@
 </head>
 <body>
 <h1>Phil's Corner Market</h1>
+<div>
 <h2>Select items to purchase below:</h2>
 
 <h3>Apple</h3>
@@ -38,5 +39,5 @@
 <form action="cart.php">
 	<button type="submit">View Cart</button>
 </form>
-
+</div>
 </body>

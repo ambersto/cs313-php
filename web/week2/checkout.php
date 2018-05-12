@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>Checkout</h1>
+<div>
 <h2>Please enter your shipping address.</h2>
 <form method="post" action="confirmation.php">
 <h3>Name: 
@@ -24,4 +25,5 @@
 <br>
 <form action="cart.php"><button type="submit">Back to Cart</button></form>
 </body>
+</div>
 </html>

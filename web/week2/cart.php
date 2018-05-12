@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>Your Cart</h1>
+<div>
 <h2>Please review the items in your cart.</h2>
 <?php
 
@@ -21,6 +22,6 @@ foreach ($_SESSION as $fruit => $quantity) {
 <form action="browse.php"><button type="submit">Continue Shopping</button></form>
 <br>
 <form action="checkout.php"><button type="submit">Checkout</button></form>
-
+</div>
 </body>
 </html>
