@@ -17,8 +17,15 @@ foreach ($_SESSION as $fruit => $quantity) {
 }
 
 echo "<p>Shipping address:<br><br>	";
-echo $_POST["username"] . "<br>" . $_POST["street"] . "<br>";
-echo $_POST["city"] . ", " . $_POST["state"] . " " . $_POST["zip"];
+echo test_input($_POST["username"]) . "<br>" . test_input($_POST["street"]) . "<br>";
+echo test_input($_POST["city"]) . ", " . test_input($_POST["state"]) . " " . test_input($_POST["zip"]);
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 ?>
 </p>
 <h2>Thank you for shopping with Phil's Corner Market!</h2>
