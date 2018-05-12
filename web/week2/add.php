@@ -10,7 +10,7 @@
 ?>
 
 <?php 
-echo "<h2>Your choice is: " . $_POST["name"] . "</h2>";
+	echo "<h1>Your choice is: " . $_POST["apple"] . "</h2>";
 //header("Location: {$_SERVER['HTTP_REFERER']}");
 ?>
 
