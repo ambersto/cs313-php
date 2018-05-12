@@ -16,7 +16,7 @@ Apples<br>
 </form>
 
 Bananas<br>
-<form method="post" action="add.php">
+<form method="post" action="add.php">banana
 	<input type="hidden" name="item" value="banana">
 	<input type="Submit">
 </form>
