@@ -8,21 +8,18 @@
 <form method="post" action="add.php">
 	<input type="text" name="username">
 	<input type="submit">
-	</form>
+</form>
 
-<p>
 Apples<br>
-	<form method="post" action="add.php">
-		<input type="hidden" name="apple">
-		<input type="submit" value="Add">
-	</form>
-</p>
-<p>
+<form method="post" action="add.php">
+	<input type="hidden" name="apple">
+	<input type="submit" value="Add">
+</form>
+
 Bananas<br>
-	<form method="post" action="add.php">
-		<input type="hidden" name="item" value="banana">
-		<input type="submit" value="Add">
-	</form>
-</p>
+<form method="post" action="add.php">
+	<input type="hidden" name="item" value="banana">
+	<input type="submit" value="Add">
+</form>
 
 </body>
