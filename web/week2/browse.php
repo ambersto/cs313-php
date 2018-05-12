@@ -12,8 +12,7 @@
 
 Apples<br>
 <form method="post" action="add.php">
-	<input type="hidden" name="apple">
-	<input type="submit" value="Add">
+	<input type="submit" name="apple" value="Add">
 </form>
 
 Bananas<br>
