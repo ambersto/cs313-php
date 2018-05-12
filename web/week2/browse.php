@@ -1,5 +1,6 @@
 <head>
 	<title>Phil's Corner Market</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
 <h1>Phil's Corner Market</h1>
