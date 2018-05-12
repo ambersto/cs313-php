@@ -12,7 +12,8 @@
 
 Apples<br>
 <form method="post" action="add.php">
-	<input type="submit" name="item" value="apple">
+	<input type="submit" name="item" value="apple" id="app">
+	<label for="app">Add to Cart</label>
 </form>
 
 Bananas<br>
