@@ -5,29 +5,28 @@
 <h1>Phil's Corner Market</h1>
 <h2>Select items to purchase below:</h2>
 
-<form method="post" action="add.php">
-	<input type="text" name="username">
-	<input type="submit">
-</form>
-
 Apples<br>
 <form method="post" action="add.php">
-	<input type="submit" name="item" value="apple">
+	<input type="hidden" name="item" value="Apple">
+	<button type="submit">Add to Cart</button>
 </form>
 
 Bananas<br>
 <form method="post" action="add.php">
-	<input type="hidden" name="item" value="banana">
+	<input type="hidden" name="item" value="Banana">
 	<button type="submit">Add to Cart</button>
 </form>
 
+Mango<br>
 <form method="post" action="add.php">
+	<input type="hidden" name="item" value="Mango">
+	<button type="submit">Add to Cart</button>
+</form>
 
-<p>Which of the following would you like to order:</p>
-<input type="checkbox" name="berry[]" value="Strawberries" id = "str"><label for="str">strawberries</label>
-<input type="checkbox" name="berry[]" value="Blueberries" id = "blu"><label for="blu">blueberries</label>
-<input type="Submit">
-
+Orange<br>
+<form method="post" action="add.php">
+	<input type="hidden" name="item" value="Orange">
+	<button type="submit">Add to Cart</button>
 </form>
 
 </body>
