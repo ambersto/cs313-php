@@ -4,6 +4,12 @@
 <body>
 <h1>Phil's Corner Market</h1>
 <h2>Select items to purchase below:</h2>
+
+<form method="post" action="handler.php">
+	<input type="text" name="username">
+	<input type="submit">
+	</form>
+
 <p>
 Apples<br>
 	<form method="post" action="add.php">
