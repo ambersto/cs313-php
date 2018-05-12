@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Confirmation</h1>
-<h2>Your purchase has been completed!</h2>
+<h2>Your purchase is complete!</h2>
 
 <?php
 session_start();
