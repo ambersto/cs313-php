@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Cart</title>
 </head>
 <body>
+<h1>Your Cart</h1>
+<h2>Please review the items in your cart.</h2>
 <?php
 
 session_start();
 
 foreach ($_SESSION as $fruit => $quantity) {
-	echo "<h2>You ordered "  . $quantity . " " . $fruit . "(s).</h2>";
+	echo "<h3>You ordered "  . $quantity . " " . $fruit . "(s).</h3>";
 }
 
 ?>
