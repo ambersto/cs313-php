@@ -3,6 +3,7 @@ body{
 	font-size: 20px;
 	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 	background-image: url("wood.jpg");
+	background-size: cover;
 }
 div{
 	background-color: white;
