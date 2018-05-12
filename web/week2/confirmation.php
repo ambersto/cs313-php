@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Confirmation</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
 <h1>Confirmation</h1>
