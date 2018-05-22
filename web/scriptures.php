@@ -33,13 +33,13 @@ foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $
 	echo $row['book'] . ' ' . $row['chapter'] . ':';
 	echo $row['verse'] . '</span>' . ' - "' . $row['content'] . '"';
 	echo '<br/>';
+}
 
 foreach ($db->query('SELECT id, book, chapter, verse FROM scriptures') as $row) {
 	echo '<a href="scriptureDetails.php?id=' . $row['id'] . '">';
 	echo $row['book'] . ' ' . $row['chapter'] . ':';
 	echo $row['verse'] . '</a>';
 	echo '<br/>';
-
 }
 
 ?>
