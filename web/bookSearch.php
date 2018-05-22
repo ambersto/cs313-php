@@ -21,8 +21,8 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row) {
-	//echo 'Database Book: ' . $row['book'] . '<br/>';
-	//echo 'Searched Book: ' . $_POST["bookQuery"];
+	echo 'Database Book: ' . $row['book'] . '<br/>';
+	echo 'Searched Book: ' . $_POST["bookQuery"] . '<br/>';
 	if($row['book'] == $_POST["bookQuery"])
 	{
 		echo '<span style="font-weight: bold;">';
