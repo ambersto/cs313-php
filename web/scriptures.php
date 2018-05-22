@@ -6,6 +6,11 @@
 <body>
 <h1>Scripture Resources</h1>
 
+<h3>Enter book: 
+<input type="text" name="bookQuery"></h3>
+<form action="bookSearch.php"><button type="submit">Search</button></form>
+<br/>
+
 <?php
 $dbUrl = getenv('DATABASE_URL');
 
