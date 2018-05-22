@@ -6,9 +6,11 @@
 <body>
 <h1>Scripture Resources</h1>
 
+<form action="bookSearch.php">
 <h3>Enter book: 
-<input type="text" name="bookQuery"></h3>
-<form action="bookSearch.php"><button type="submit">Search</button></form>
+<input type="text" name="bookQuery">
+<button type="submit">Search</button></h3>
+</form>
 <br/>
 
 <?php
