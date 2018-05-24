@@ -33,7 +33,7 @@ foreach ($db->query('SELECT title, composerID, typeID, isSoprano, isAlto, isTeno
 	
 	foreach ($db->query('SELECT id, firstName, lastName FROM composer') as $composerRow) {
 		if($composerRow['id'] == $row['composerid']) {
-			echo $composerRow['lastname'];
+			//echo $composerRow['lastname'];
 			$composer = $composerRow['lastname'];
 		}
 	}
