@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>FTH Music Library</h1>
-<h2>This is the an electronic compilation of the music for From the Heart Choir. Below is a list of all songs.</h2>
+<h2>This is the an electronic compilation of the music for From the Heart choir. Below is a list of all songs.</h2>
 
 <?php
 $dbUrl = getenv('DATABASE_URL');
@@ -23,13 +23,9 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 foreach ($db->query('SELECT title, composerID, typeID, isSoprano, isAlto, isTenor, isBass FROM song') as $row) {
-	
-	echo 'Title: ' . $row['title'] . '<br/>';
-	echo 'Composer: ' . $row['composerid'] . '<br/>';
-	echo 'Type: ' . $row['typeid'] . '<br/><br/>';
 
 	$composer;
-	$type = "";
+	$type;
 	
 	foreach ($db->query('SELECT id, firstName, lastName FROM composer') as $composerRow) {
 		if($composerRow['id'] == $row['composerid']) {
