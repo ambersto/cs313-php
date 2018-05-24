@@ -25,8 +25,8 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 foreach ($db->query('SELECT title, composerID, typeID, isSoprano, isAlto, isTenor, isBass FROM song') as $row) {
 	
 	echo 'Title: ' . $row['title'] . '<br/>';
-	echo 'Composer: ' . $row['composerID'] . '<br/>';
-	echo 'Type: ' . $row['typeID'] . '<br/><br/>';
+	echo 'Composer: ' . $row['composerid'] . '<br/>';
+	echo 'Type: ' . $row['typeid'] . '<br/><br/>';
 
 	print_r($row);
 
