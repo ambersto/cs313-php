@@ -22,35 +22,12 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-/*foreach ($db->query('SELECT title, composerID, typeID, isSoprano, isAlto, isTenor, isBass FROM song') as $row) {
-
-	$composer;
-	$type;
-	
-	foreach ($db->query('SELECT id, firstName, lastName FROM composer') as $composerRow) {
-		if($composerRow['id'] == $row['composerid']) {
-			//echo $composerRow['lastname'];
-			$composer = $composerRow['firstname'].' '.$composerRow['lastname'];
-		}
-	}
-	
-	foreach($db->query('SELECT id, name FROM type') as $typeRow){
-		if($typeRow['id'] == $row['typeid']) {
-			$type = $typeRow['name'];
-		}
-	}
-
-	echo '<span style="font-weight: bold;">';
-	echo $row['title'] . '</span> by ' . $composer;
-	echo '<br/>Type: ' . $type . '<br/><br/>';
-}*/
-
 $query = "SELECT s.title, c.firstName, c.lastName FROM song s INNER JOIN composer c ON s.composerID = c.id";
 
 foreach ($db->query($query) as $row) {
 	echo '<span style="font-weight: bold;">';
-	echo $row['title'] . '</span> by ' . $row['firstname'] . ' ';
-	echo $row['lastname'] . '<br/><br/>';
+	echo $row['title'] . '</span><span style="font-style: italic;"> by ' . $row['firstname'] . ' ';
+	echo $row['lastname'] . '</span><br/><br/>';
 }
 
 ?>
