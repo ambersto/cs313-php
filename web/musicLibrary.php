@@ -28,13 +28,12 @@ foreach ($db->query('SELECT title, composerID, typeID, isSoprano, isAlto, isTeno
 	echo 'Composer: ' . $row['composerid'] . '<br/>';
 	echo 'Type: ' . $row['typeid'] . '<br/><br/>';
 
-	$composer = "";
+	$composer;
 	$type = "";
 	
 	foreach ($db->query('SELECT id, firstName, lastName FROM composer') as $composerRow) {
 		if($composerRow['id'] == $row['composerid']) {
-			$composer += $composerRow['lastname'];
-			$composer += $composerRow['firstname'];
+			$composer = $composerRow['firstname'] + $composerRow['lastname'];
 		}
 	}
 	
