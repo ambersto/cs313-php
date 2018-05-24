@@ -28,26 +28,24 @@ foreach ($db->query('SELECT title, composerID, typeID, isSoprano, isAlto, isTeno
 	echo 'Composer: ' . $row['composerid'] . '<br/>';
 	echo 'Type: ' . $row['typeid'] . '<br/><br/>';
 
-	print_r($row);
-
-	/*$composer = "";
+	$composer = "";
 	$type = "";
 	
 	foreach ($db->query('SELECT id, firstName, lastName FROM composer') as $composerRow) {
-		if($composerRow['id'] == $row['composerID']) {
+		if($composerRow['id'] == $row['composerid']) {
 			$composer += $composerRow['lastName'];
 		}
 	}
 	
 	foreach($db->query('SELECT id, name FROM type') as $typeRow){
-		if($typeRow['id'] == $row['typeID']) {
+		if($typeRow['id'] == $row['typeid']) {
 			$type = $typeRow['name'];
 		}
 	}
 
 	echo '<span style="font-weight: bold;">';
 	echo $row['title'] . '</span> by ' . $composer;
-	echo '<br/>Type: ' . $type . '<br/><br/>';*/
+	echo '<br/>Type: ' . $type . '<br/><br/>';
 }
 
 ?>
