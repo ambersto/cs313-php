@@ -40,7 +40,7 @@ foreach ($db->query('SELECT title,	composerID,	typeID,	isSoprano, isAlto, isTeno
 	}
 
 	echo '<span style="font-weight: bold;">';
-	echo $row['title'] . '</span> by ' . $row['composerID'];
+	echo $row['title'] . '</span> by ' . $composer;
 	echo '<br/>Type: ' . $type . '<br/>';
 }
 
