@@ -45,9 +45,9 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	echo '<br/>Type: ' . $type . '<br/><br/>';
 }*/
 
-foreach ($db->query('SELECT s\.title, c\.firstName, c\.lastName FROM song s INNER JOIN composer s ON s\.composerID = c\.id') as $row) {
-	echo 'I am here';
+$query = "SELECT s.title, c.firstName, c.lastName FROM song s INNER JOIN composer c ON s.composerID = c.id";
 
+foreach ($db->query($query) as $row) {
 	echo '<span style="font-weight: bold;">';
 	echo $row['title'] . '</span> by ' . $row['firstname'] . ' ';
 	echo $row['lastname'] . '<br/><br/>';
