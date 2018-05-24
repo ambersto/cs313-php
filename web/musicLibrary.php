@@ -26,9 +26,11 @@ foreach ($db->query('SELECT title, composerID, typeID, isSoprano, isAlto, isTeno
 	
 	echo 'Title: ' . $row['title'] . '<br/>';
 	echo 'Composer: ' . $row['composerID'] . '<br/>';
-	echo 'Type: ' . $row['typeID'] . '<br/>';
+	echo 'Type: ' . $row['typeID'] . '<br/><br/>';
 
-	$composer = "";
+	print_r($row);
+
+	/*$composer = "";
 	$type = "";
 	
 	foreach ($db->query('SELECT id, firstName, lastName FROM composer') as $composerRow) {
@@ -45,7 +47,7 @@ foreach ($db->query('SELECT title, composerID, typeID, isSoprano, isAlto, isTeno
 
 	echo '<span style="font-weight: bold;">';
 	echo $row['title'] . '</span> by ' . $composer;
-	echo '<br/>Type: ' . $type . '<br/><br/>';
+	echo '<br/>Type: ' . $type . '<br/><br/>';*/
 }
 
 ?>
