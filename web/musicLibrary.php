@@ -22,8 +22,12 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-foreach ($db->query('SELECT title,	composerID,	typeID,	isSoprano, isAlto, isTenor, isBass FROM song') as $row) {
+foreach ($db->query('SELECT title, composerID, typeID, isSoprano, isAlto, isTenor, isBass FROM song') as $row) {
 	
+	echo 'Title: ' . $row['title'] . '<br/>';
+	echo 'Composer: ' . $row['composerID'] . '<br/>';
+	echo 'Type: ' . $row['typeID'] . '<br/>';
+
 	$composer = "";
 	$type = "";
 	
@@ -41,7 +45,7 @@ foreach ($db->query('SELECT title,	composerID,	typeID,	isSoprano, isAlto, isTeno
 
 	echo '<span style="font-weight: bold;">';
 	echo $row['title'] . '</span> by ' . $composer;
-	echo '<br/>Type: ' . $type . '<br/>';
+	echo '<br/>Type: ' . $type . '<br/><br/>';
 }
 
 ?>
