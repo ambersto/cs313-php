@@ -21,9 +21,9 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $row = $db->query("SELECT * FROM song WHERE id = ".$_GET['id']);
-/*$composer = $db->query('SELECT firstName, lastName FROM composer WHERE id = '.$row['composerid']);
+$composer = $db->query('SELECT firstName, lastName FROM composer WHERE id = '.$row['composerid']);
 $type = $db->query('SELECT name FROM type WHERE id = '.$row['typeid']);
-
+/*
 echo '<h2>' . $row['title'] . '</h2>
 <h3>' . $composer['firstname'] . ' ' . $composer['lastname'] . '</h3>
 <ul>
