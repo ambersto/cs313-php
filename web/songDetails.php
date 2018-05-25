@@ -20,15 +20,19 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-echo '<h2>ID is: ' . $_GET['id'];
-
 $id = $_GET['id'];
 $query = ("SELECT * FROM song WHERE id=$id");
 
 foreach ($db->query($query) as $row) {
-	echo 'Title is: ' . $row['title'];
+	echo 'Title is: ' . $row['title'] . '<br/>';
 }
 
+
+$querytwo = ("SELECT s.title, c.firstName, c.lastName, t.name, s.isSoprano, s.isAlto, s.isTenor, s.isBass FROM song s INNER JOIN composer c ON s.composerID=c.id INNER JOIN type t WHERE s.typeID=t.id");
+
+foreach ($db->query($querytwo) as $row) {
+	echo 'Title is: ' . $row['title'] . '<br/>';
+}
 
 ?>
 
