@@ -28,7 +28,7 @@ echo '<ul>';
 foreach ($db->query($query) as $row) {
 	echo '<a href="songDetails.php?id=' . $row['id'] . '">';
 	echo '<li><span style="font-weight: bold;">';
-	echo $row['title'] . '</span><span style="font-style: italic;"> by ' . $row['firstname'] . ' ';
+	echo $row['title'] . '</span></a><span style="font-style: italic;"> by ' . $row['firstname'] . ' ';
 	echo $row['lastname'] . '</span></li>';
 }
 
