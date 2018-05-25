@@ -22,7 +22,8 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 echo '<h2>ID is: ' . $_GET['id'];
 
-$query = ("SELECT * FROM song");
+$id = $_GET['id'];
+$query = ("SELECT * FROM song WHERE id=$id");
 
 foreach ($db->query($query) as $row) {
 	echo 'Title is: ' . $row['title'];
