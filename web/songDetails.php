@@ -22,29 +22,13 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 echo '<h2>ID is: ' . $_GET['id'];
 
-$query = sprintf("SELECT * FROM song WHERE id='%s'",$_GET['id']);
-$row = $db->query($query);
-$composer = $db->query('SELECT firstName, lastName FROM composer WHERE id = '.$row['composerid']);
-$type = $db->query('SELECT name FROM type WHERE id = '.$row['typeid']);
+$query = ("SELECT * FROM song");
 
-echo '<h2>' . $row['title'] . '</h2>';/*
-<h3>' . $composer['firstname'] . ' ' . $composer['lastname'] . '</h3>
-<ul>
-<li>Type: ' . $type['name'] . '</li>
-<li>Voice Parts: ';
-if ($row[issoprano]){
-	echo 'S';
+foreach ($db->query($query) as $row) {
+	echo 'Title is: ' . $row['title'];
 }
-if ($row[isalto]){
-	echo 'A';
-}
-if ($row[istenor]){
-	echo 'T';
-}
-if ($row[isbass]){
-	echo 'B';
-}
-echo '</li></ul>';*/
+
+
 ?>
 
 </body>
