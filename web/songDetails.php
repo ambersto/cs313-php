@@ -24,7 +24,7 @@ $row = $db->query("SELECT * FROM song WHERE id = ".$_GET['id']);
 $composer = $db->query('SELECT firstName, lastName FROM composer WHERE id = '.$row['composerid']);
 $type = $db->query('SELECT name FROM type WHERE id = '.$row['typeid']);
 
-/*echo '<h2>' . $row['title'] . '</h2>
+echo '<h2>' . $row['title'] . '</h2>';/*
 <h3>' . $composer['firstname'] . ' ' . $composer['lastname'] . '</h3>
 <ul>
 <li>Type: ' . $type['name'] . '</li>
