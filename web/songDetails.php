@@ -22,7 +22,8 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 echo '<h2>ID is: ' . $_GET['id'];
 
-$query = $db->query("SELECT * FROM song WHERE id = ".$_GET['id']);
+$query = sprintf("SELECT * FROM song WHERE id='%s'",$_GET['id']);
+$row = $db->query($query);
 $composer = $db->query('SELECT firstName, lastName FROM composer WHERE id = '.$row['composerid']);
 $type = $db->query('SELECT name FROM type WHERE id = '.$row['typeid']);
 
