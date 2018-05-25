@@ -27,11 +27,10 @@ foreach ($db->query($query) as $row) {
 	echo 'Title is: ' . $row['title'] . '<br/>';
 }
 
-
-$querytwo = ("SELECT s.title, c.firstName, c.lastName, t.name, s.isSoprano, s.isAlto, s.isTenor, s.isBass FROM song s INNER JOIN composer c ON s.composerID=c.id INNER JOIN type t WHERE s.typeID=t.id");
+$querytwo = ("SELECT s.title, c.firstName, c.lastName, t.name, s.isSoprano, s.isAlto, s.isTenor, s.isBass FROM song s INNER JOIN composer c ON s.composerID=c.id INNER JOIN type t ON s.typeID=t.id");
 
 foreach ($db->query($querytwo) as $row) {
-	echo 'Title is: ' . $row['title'] . '<br/>';
+	echo 'Title Two is: ' . $row['title'] . '<br/>';
 }
 
 ?>
