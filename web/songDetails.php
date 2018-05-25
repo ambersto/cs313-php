@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Song Details</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
 <h1>Song Details</h1>

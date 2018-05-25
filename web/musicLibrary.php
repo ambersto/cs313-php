@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>FTH Music Library</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
 <h1>FTH Music Library</h1>
