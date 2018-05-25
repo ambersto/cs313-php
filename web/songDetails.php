@@ -20,7 +20,7 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$row = $db->query("SELECT * FROM song WHERE id = ".$_GET['id']);
+$query = $db->query("SELECT * FROM song WHERE id = 3");
 $composer = $db->query('SELECT firstName, lastName FROM composer WHERE id = '.$row['composerid']);
 $type = $db->query('SELECT name FROM type WHERE id = '.$row['typeid']);
 
