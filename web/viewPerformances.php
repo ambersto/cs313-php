@@ -32,18 +32,21 @@ $query = "SELECT id, year, semester FROM performance";
 echo '<ul style="position: relative; margin-left:250px; list-style-type:none;">';
 
 foreach ($db->query($query) as $row) {
+	// Display semester and year of performance
 	echo '<li>' . $row['semester'] . ' ' . $row['year'] . ' Performance:</li>';
 	$performanceID = $row['id'];
 
+	// Display list of songs sung during performance
 	foreach ($db->query("SELECT s.id, s.title, c.firstName, c.lastName FROM performanceList pl INNER JOIN song s ON pl.songID = s.id INNER JOIN composer c ON s.composerID = c.id WHERE pl.performanceID = $performanceID") as $songRow) {
 		echo '<a href="songDetails.php?id=' . $songRow['id'] . '">';
 		echo '<li><span style="font-weight: bold;">';
 		echo $songRow['title'] . '</span></a><span style="font-style: italic;"> by ' . $songRow['firstname'] . ' ';
 		echo $songRow['lastname'] . '</span></li>';
 	}
+	echo '<br/>';
 }
 
-echo '</ul><br/>';
+echo '</ul>';
 
 ?>
 
