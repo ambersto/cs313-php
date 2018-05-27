@@ -37,7 +37,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 /*$query = "SELECT s.id, s.title, c.firstName, c.lastName FROM song s INNER JOIN composer c ON s.composerID = c.id";
 echo '<ul style="position: relative; margin-left:250px; list-style-type:none;">';*/
 
-foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+foreach ($rows) {
 	echo '<a href="songDetails.php?id=' . $row['id'] . '">';
 	echo '<li><span style="font-weight: bold;">';
 	echo $row['title'] . '</span></a><span style="font-style: italic;"> by ' . $row['firstname'] . ' ';
