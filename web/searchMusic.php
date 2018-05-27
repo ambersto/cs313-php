@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>View Performances</title>
+	<title>Search Songs</title>
 	<link rel="stylesheet" type="text/css" href="style2.css"/>
 </head>
 <body>
-<h1>Performance List</h1>
+<h1>Search Songs</h1>
 <a href="musicLibrary.php"><div id="button">Home</div></a>
 <a href="viewSongs.php"><div id="button">View Songs</div></a>
 <a href="viewPerformances.php"><div id="button">View Performances</div></a>
