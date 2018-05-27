@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Song List</title>
+	<title>View Performances</title>
 	<link rel="stylesheet" type="text/css" href="style2.css"/>
 </head>
 <body>
-<h1>Song List</h1>
+<h1>Performance List</h1>
 <a href="musicLibrary.php"><div id="button">Home</div></a>
 <a href="viewSongs.php"><div id="button">View Songs</div></a>
 <a href="viewPerformances.php"><div id="button">View Performances</div></a>
@@ -28,7 +28,7 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$query = "SELECT s.id, s.title, c.firstName, c.lastName FROM song s INNER JOIN composer c ON s.composerID = c.id";
+$query = "SELECT p.semester, p.year, s.id, s.title, c.firstName, c.lastName FROM performance p INNER JOIN performanceList pl ON p.id = pl.performanceID INNER JOIN song s ON pl.songID = s.id INNER JOIN composer c ON s.composerID = c.id";
 echo '<ul style="position: relative; margin-left:250px; list-style-type:none;">';
 
 foreach ($db->query($query) as $row) {

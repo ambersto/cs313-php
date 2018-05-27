@@ -8,7 +8,7 @@
 <h1>Song Details</h1>
 <a href="musicLibrary.php"><div id="button">Home</div></a>
 <a href="viewSongs.php"><div id="button">View Songs</div></a>
-<div id="button">View Performances</div>
+<a href="viewPerformances.php"><div id="button">View Performances</div></a>
 <div id="button">Search Music</div>
 <div id="button" class="last">Add Songs</div>
 <?php
