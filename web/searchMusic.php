@@ -39,7 +39,8 @@ if(isset($_POST['songSearch'])) {
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	$songTitle = $_POST['songSearch'];
-	$query = "SELECT s.id, s.title, c.firstName, c.lastName FROM song s INNER JOIN composer c ON s.composerID = c.id WHERE s.title = $songTitle";
+	$query = "SELECT s.id, s.title, c.firstName, c.lastName FROM song s INNER JOIN composer c ON s.composerID = c.id WHERE s.title = '$songTitle'";
+	echo '<ul style="position: relative; margin-left:250px; list-style-type:none;">';
 
 	foreach ($db->query($query) as $row) {
 		echo '<a href="songDetails.php?id=' . $row['id'] . '">';
@@ -47,6 +48,8 @@ if(isset($_POST['songSearch'])) {
 		echo $row['title'] . '</span></a><span style="font-style: italic;"> by ' . $row['firstname'] . ' ';
 		echo $row['lastname'] . '</span></li>';
 	}
+
+	echo '</ul>';
 }
 
 ?>
