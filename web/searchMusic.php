@@ -14,13 +14,15 @@
 <h2>This is the an electronic compilation of the music for From the Heart choir. Below is a list of performances and the songs that were sung at each one.</h2>
 
 <form method="post" action="searchMusic.php">
+<br/>
 <h3>Type the name of a song: 
-<input type="text" name="songSearch"></h3><button type="submit">Go</button>
+<input type="text" name="songSearch"><button type="submit">Go</button></h3>
 </form>
 
 <?php
 
 if(isset($_POST['songSearch'])) {
+	echo "Post is: " . $_POST['songSearch'];
 
 	$dbUrl = getenv('DATABASE_URL');
 
