@@ -29,7 +29,7 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $stmt = $db->prepare('SELECT s.id, s.title, c.firstName, c.lastName FROM song s INNER JOIN composer c ON s.composerID = c.id WHERE id=:id AND title=:title AND firstName=:firstname AND lastName=:lastname');
-$stmt->execute(array(':name' => $name, ':id' => $id));
+$stmt->execute(array(':id'=>$id, ':title'=>$title, ':firstname'=>$firstname, '=:lastname'=>$lastname));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo '<ul style="position: relative; margin-left:250px; list-style-type:none;">';
