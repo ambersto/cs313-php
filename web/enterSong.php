@@ -25,7 +25,7 @@
 <h3>Voice parts (i.e. SATB, SA, SAT, TB, etc.):
 <input type="text" name="voiceParts"></h3>
 <br><br>
-<button type="submit">Add Song</button>
+<h3><button type="submit">Add Song</button></h3>
 </form>
 </div>
 

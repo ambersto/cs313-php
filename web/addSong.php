@@ -16,11 +16,10 @@
 
 <?php
 
-echo "<p>Shipping address:<br><br>	";
-echo test_input($_POST["songTitle"]) . 
+echo "<h3>" . test_input($_POST["songTitle"]) . 
 "<br>" . test_input($_POST["composerFirstName"]) . " " . test_input($_POST["composerLastName"]) . 
 "<br>Type: " . test_input($_POST["songType"]) . 
-"<br>Voice part(s): " . test_input($_POST["voiceParts"]);
+"<br>Voice part(s): " . test_input($_POST["voiceParts"]) . "</h3>";
 
 function test_input($data) {
   $data = trim($data);
