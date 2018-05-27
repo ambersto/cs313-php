@@ -38,10 +38,10 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 echo '<ul style="position: relative; margin-left:250px; list-style-type:none;">';*/
 
 foreach ($rows) {
-	echo '<a href="songDetails.php?id=' . $row['id'] . '">';
+	echo '<a href="songDetails.php?id=' . $rowa['id'] . '">';
 	echo '<li><span style="font-weight: bold;">';
-	echo $row['title'] . '</span></a><span style="font-style: italic;"> by ' . $row['firstname'] . ' ';
-	echo $row['lastname'] . '</span></li>';
+	echo $rows['title'] . '</span></a><span style="font-style: italic;"> by ' . $rows['firstname'] . ' ';
+	echo $rows['lastname'] . '</span></li>';
 }
 
 echo '</ul>';
