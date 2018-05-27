@@ -1,5 +1,5 @@
 body{
-	color: #2e7bf7;
+	color: #595656;
 	font-size: 20px;
 	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
@@ -9,7 +9,7 @@ h1{
 	color: white;
 	font-family: Georgia, serif;
 	text-shadow: 0px 2px #757575;
-	background-color: rgb(28, 216, 175);
+	background-color: #2e7bf7;
 	padding: 20px;
 	margin-bottom: 50px;
 }
