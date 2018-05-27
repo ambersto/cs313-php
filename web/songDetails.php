@@ -6,6 +6,11 @@
 </head>
 <body>
 <h1>Song Details</h1>
+<a href="musicLibrary.php"><div id="button">Home</div></a>
+<a href="viewSongs.php"><div id="button">View Songs</div></a>
+<div id="button">View Performances</div>
+<div id="button">Search Music</div>
+<div id="button">Add Songs</div>
 <?php
 $dbUrl = getenv('DATABASE_URL');
 
