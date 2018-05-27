@@ -13,6 +13,7 @@
 <a href="enterSong.php"><div id="button" class="last">Add Songs</div></a>
 <div>
 <h2>Please enter the information for the song you would like to add.</h2>
+<br><br>
 <form method="post" action="addSong.php">
 <h3>Title of song: 
 <input type="text" name="songTitle"></h3>
@@ -24,7 +25,6 @@
 <input type="text" name="songType"></h3>
 <h3>Voice parts (i.e. SATB, SA, SAT, TB, etc.):
 <input type="text" name="voiceParts"></h3>
-<br><br>
 <h3><button type="submit">Add Song</button></h3>
 </form>
 </div>

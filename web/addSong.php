@@ -13,11 +13,12 @@
 <a href="enterSong.php"><div id="button" class="last">Add Songs</div></a>
 
 <h2>This page is a work in progress. The functionality to add your song has not yet been implemented. Below is the information you entered.</h2>
+<br><br>
 
 <?php
 
 echo "<h3>" . test_input($_POST["songTitle"]) . 
-"<br>" . test_input($_POST["composerFirstName"]) . " " . test_input($_POST["composerLastName"]) . 
+"<br>By " . test_input($_POST["composerFirstName"]) . " " . test_input($_POST["composerLastName"]) . 
 "<br>Type: " . test_input($_POST["songType"]) . 
 "<br>Voice part(s): " . test_input($_POST["voiceParts"]) . "</h3>";
 
