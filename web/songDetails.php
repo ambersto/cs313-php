@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Song Details</title>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<link rel="stylesheet" type="text/css" href="style2.css"/>
 </head>
 <body>
 <h1>Song Details</h1>
@@ -10,7 +10,7 @@
 <a href="viewSongs.php"><div id="button">View Songs</div></a>
 <div id="button">View Performances</div>
 <div id="button">Search Music</div>
-<div id="button">Add Songs</div>
+<div id="button" class="last">Add Songs</div>
 <?php
 $dbUrl = getenv('DATABASE_URL');
 
