@@ -43,18 +43,7 @@ foreach ($db->query($query) as $row) {
 	}
 }
 
-/*$query = "SELECT p.semester, p.year, s.id, s.title, c.firstName, c.lastName FROM performance p INNER JOIN performanceList pl ON p.id = pl.performanceID INNER JOIN song s ON pl.songID = s.id INNER JOIN composer c ON s.composerID = c.id";
-echo '<ul style="position: relative; margin-left:250px; list-style-type:none;">';
-
-foreach ($db->query($query) as $row) {
-	echo '<li>' . $row['semester'] . ' ' . $row['year'] . ' Performance:</li>';
-	echo '<a href="songDetails.php?id=' . $row['id'] . '">';
-	echo '<li><span style="font-weight: bold;">';
-	echo $row['title'] . '</span></a><span style="font-style: italic;"> by ' . $row['firstname'] . ' ';
-	echo $row['lastname'] . '</span></li>';
-}*/
-
-echo '</ul>';
+echo '</ul><br/>';
 
 ?>
 
