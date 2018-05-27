@@ -10,7 +10,7 @@
 <a href="viewSongs.php"><div id="button">View Songs</div></a>
 <a href="viewPerformances.php"><div id="button">View Performances</div></a>
 <a href="searchMusic.php"><div id="button">Search Music</div></a>
-<div id="button" class="last">Add Songs</div>
+<a href="enterSong.php"><div id="button" class="last">Add Songs</div></a>
 <h2>This is the an electronic compilation of the music for From the Heart choir. Select an option from the menu to the left.</h2>
 
 

@@ -10,7 +10,7 @@
 <a href="viewSongs.php"><div id="button">View Songs</div></a>
 <a href="viewPerformances.php"><div id="button">View Performances</div></a>
 <a href="searchMusic.php"><div id="button">Search Music</div></a>
-<div id="button" class="last">Add Songs</div>
+<a href="enterSong.php"><div id="button" class="last">Add Songs</div></a>
 <?php
 $dbUrl = getenv('DATABASE_URL');
 
