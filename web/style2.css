@@ -1,5 +1,5 @@
 body{
-	color: #595656;
+	color: #2e7bf7;
 	font-size: 20px;
 	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
@@ -42,7 +42,7 @@ p.body {
 	padding-right: 10px;
 }
 #button{
-	background-color: rgb(28, 216, 175);
+	background-color: #2e7bf7;
 	color: white;
 	text-shadow: 1px 1px gray;
 	font-weight: bold;
