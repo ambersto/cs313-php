@@ -33,7 +33,7 @@ echo '<ul style="position: relative; margin-left:250px; list-style-type:none;">'
 
 foreach ($db->query($query) as $row) {
 	// Display semester and year of performance
-	echo '<li>' . $row['semester'] . ' ' . $row['year'] . ' Performance:</li>';
+	echo '<li><span style="font-weight: bold;">' . $row['semester'] . ' ' . $row['year'] . ' Performance:</li></span>';
 	$performanceID = $row['id'];
 
 	// Display list of songs sung during performance
