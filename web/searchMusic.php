@@ -38,7 +38,6 @@ if(isset($_POST['songSearch'])) {
 
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	$songTitle = $_POST['songSearch'];
 	$query = "SELECT s.id, s.title, c.firstName, c.lastName FROM song s INNER JOIN composer c ON s.composerID = c.id WHERE s.title = '$songTitle'";
 	echo '<ul style="position: relative; margin-left:250px; list-style-type:none;">';
 
