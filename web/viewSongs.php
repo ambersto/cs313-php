@@ -29,7 +29,7 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $query = "SELECT s.id, s.title, c.firstName, c.lastName FROM song s INNER JOIN composer c ON s.composerID = c.id";
-echo '<ul style="margin-left:30px; list-style-type:none;">';
+echo '<ul style="margin-left:300px; list-style-type:none;">';
 
 foreach ($db->query($query) as $row) {
 	echo '<a href="songDetails.php?id=' . $row['id'] . '">';

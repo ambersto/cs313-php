@@ -16,19 +16,16 @@ h1{
 h2{
 	margin-top: 0px;
 	margin-bottom: 0px;
-	margin-left: 30px;
+	margin-left: 300px;
 }
 h3{
 	margin-top: 0px;
 	margin-bottom: 0px;
 	font-style: italic;
 }
-ul{
-	margin-left: 40px;
-}
 p.body {
 	text-align: center;
-	margin: 20px 40px 20px;
+	margin: 20px 300px 20px;
 }
 #breadCrumb{
 	margin-bottom: 5px;
@@ -55,6 +52,7 @@ p.body {
 	clear: left;
 	margin: 10px;
 	line-height: 40px;
+	position: fixed;
 }
 #button:hover{
 	background-color: rgb(247, 176, 106);
