@@ -28,20 +28,14 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$stmt = $db->prepare("SELECT s.id, s.title, c.firstName, c.lastName FROM song s INNER JOIN composer c ON s.composerID = c.id");
-$stmt->bindValue(':id', $id, PDO::PARAM_INT);
-$stmt->bindValue(':name', $name, PDO::PARAM_STR);
-$stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$query = "SELECT s.id, s.title, c.firstName, c.lastName FROM song s INNER JOIN composer c ON s.composerID = c.id";
+echo '<ul style="position: relative; margin-left:250px; list-style-type:none;">';
 
-/*$query = "SELECT s.id, s.title, c.firstName, c.lastName FROM song s INNER JOIN composer c ON s.composerID = c.id";
-echo '<ul style="position: relative; margin-left:250px; list-style-type:none;">';*/
-
-foreach ($rows) {
-	echo '<a href="songDetails.php?id=' . $rowa['id'] . '">';
+foreach ($db->query($query) as $row) {
+	echo '<a href="songDetails.php?id=' . $row['id'] . '">';
 	echo '<li><span style="font-weight: bold;">';
-	echo $rows['title'] . '</span></a><span style="font-style: italic;"> by ' . $rows['firstname'] . ' ';
-	echo $rows['lastname'] . '</span></li>';
+	echo $row['title'] . '</span></a><span style="font-style: italic;"> by ' . $row['firstname'] . ' ';
+	echo $row['lastname'] . '</span></li>';
 }
 
 echo '</ul>';
