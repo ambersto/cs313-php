@@ -52,7 +52,6 @@ p.body {
 	clear: left;
 	margin: 10px;
 	line-height: 40px;
-	position: fixed;
 }
 #button:hover{
 	background-color: rgb(247, 176, 106);
