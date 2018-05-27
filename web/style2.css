@@ -9,7 +9,7 @@ h1{
 	color: white;
 	font-family: Georgia, serif;
 	text-shadow: 0px 2px #757575;
-	background-color: #8aaef2;
+	background-color: #1c97cc;
 	padding: 20px;
 	margin-bottom: 50px;
 }
@@ -42,7 +42,7 @@ p.body {
 	padding-right: 10px;
 }
 #button{
-	background-color: #8aaef2;
+	background-color: #1c97cc;
 	color: white;
 	text-shadow: 1px 1px gray;
 	font-weight: bold;
