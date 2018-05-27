@@ -32,7 +32,7 @@ $query = ("SELECT s.title, c.firstName, c.lastName, t.name, s.isSoprano, s.isAlt
 foreach ($db->query($query) as $row) {
 	echo '<h2>' . $row['title'] . '</h2>
 	<h3>By ' . $row['firstname'] . ' ' . $row['lastname'] . '</h3>
-	<ul><li>' . $row['name'] . '</li><li>';
+	<ul style="margin-left:250px; list-style-type:none;"><li>' . $row['name'] . '</li><li>';
 	if($row['issoprano']) {
 		echo 'S';
 	}
