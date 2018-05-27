@@ -35,7 +35,7 @@ foreach ($db->query($query) as $row) {
 	echo '<li>' . $row['semester'] . ' ' . $row['year'] . ' Performance:</li>';
 	$performanceID = $row['id'];
 
-	foreach ($db->query("SELECT s.id, s.title, c.firstName, c.lastName FROM performanceList pl WHERE pl.performanceID = $performanceID INNER JOIN song s ON pl.songID = s.id INNER JOIN composer c ON s.composerID = c.id") as $songRow) {
+	foreach ($db->query("SELECT s.id, s.title, c.firstName, c.lastName FROM performanceList pl WHERE pl.performanceID = 1 INNER JOIN song s ON pl.songID = s.id INNER JOIN composer c ON s.composerID = c.id") as $songRow) {
 		echo '<a href="songDetails.php?id=' . $songRow['id'] . '">';
 		echo '<li><span style="font-weight: bold;">';
 		echo $songRow['title'] . '</span></a><span style="font-style: italic;"> by ' . $songRow['firstname'] . ' ';
