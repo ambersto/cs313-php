@@ -11,7 +11,7 @@
 <a href="viewPerformances.php"><div id="button">View Performances</div></a>
 <a href="searchMusic.php"><div id="button">Search Music</div></a>
 <div id="button" class="last">Add Songs</div>
-<h2>This is the an electronic compilation of the music for From the Heart choir. Below is a list of performances and the songs that were sung at each one.</h2>
+<h2>This is the an electronic compilation of the music for From the Heart choir. Search for specific songs below.</h2>
 
 <form method="post" action="searchMusic.php">
 <br/>
