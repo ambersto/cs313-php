@@ -34,13 +34,13 @@ $stmt->bindValue(':content', $content, PDO::PARAM_STR);
 $stmt->execute();
 
 $scriptureID = $pdo->lastInsertId('scripture_id_seq');
-
+var_dump($_POST);
 foreach ($_POST['topics'] as $topicID) {
 	echo "I am here :)";
-	/*$stmt = $db->prepare('INSERT INTO scriptureTopics (scriptureID, topicID) VALUES (:topicID, :scriptureID)');
+	$stmt = $db->prepare('INSERT INTO scriptureTopics (scriptureID, topicID) VALUES (:topicID, :scriptureID)');
 	$stmt->bindValue(':topicID', $topicID, PDO::PARAM_INT);
 	$stmt->bindValue(':scriptureID', $scriptureID, PDO::PARAM_INT);
-	$stmt->execute();*/
+	$stmt->execute();
 }
 
 ?>
