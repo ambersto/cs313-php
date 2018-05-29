@@ -13,8 +13,7 @@
 <h3>Verse: 
 <input type="text" name="verse"></h3>
 <h3>Content: 
-<textarea name="songType"></h3>
-<input type="checkbox" name="" value="">
+<textarea name="songType"></h3></textarea>
 <?php
 
 $dbUrl = getenv('DATABASE_URL');
