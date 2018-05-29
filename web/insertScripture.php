@@ -33,7 +33,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $query = "SELECT * FROM topics";
 
 foreach ($db->query($query) as $row) {
-	$name = $row['book'];
+	$name = $row['name'];
 	$id = $row['id'];
 	echo '<h3><input type="checkbox" name="'.$name.'" value="'.$id.'">'.$name.'</h3><br/>';
 }
