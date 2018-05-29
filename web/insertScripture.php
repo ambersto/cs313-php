@@ -13,7 +13,7 @@
 <h3>Verse: 
 <input type="text" name="verse"></h3>
 <h3>Content: 
-<textarea name="songType"></h3></textarea>
+<textarea name="songType"></textarea></h3>
 <?php
 
 $dbUrl = getenv('DATABASE_URL');
@@ -35,7 +35,7 @@ $query = "SELECT * FROM topics";
 foreach ($db->query($query) as $row) {
 	$name = $row['book'];
 	$id = $row['id'];
-	echo '<h3><input type="checkbox" name="$name" value="$id">$name</h3><br/>';
+	echo '<h3><input type="checkbox" name="'.$name.'" value="'.$id.'">'.$name.'</h3><br/>';
 }
 ?>
 <button type="submit">Add Scripture</button>
