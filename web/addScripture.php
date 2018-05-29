@@ -21,16 +21,11 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-/*$book = $_POST['book'];
+$book = $_POST['book'];
 $chapter = $_POST['chapter'];
 $verse = $_POST['verse'];
 $content = $_POST['content'];
-$topicID = $_POST['id'];*/
-
-$book = 'Test';
-$chapter = 1;
-$verse = 11;
-$content = 'Here is test content';
+$topicID = $_POST['id'];
 
 $stmt = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
 $stmt->bindValue(':book', $book, PDO::PARAM_STR);
