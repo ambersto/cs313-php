@@ -30,7 +30,7 @@ $topicID = $_POST['id'];*/
 $book = 'Test';
 $chapter = 1;
 $verse = 11;
-$content = "Here is test content";
+$content = 'Here is test content';
 
 $stmt = $pdo->prepare('INSERT INTO scriptures (book,chapter,verse,content) VALUES (:book,:chapter,:verse,:content)');
 $stmt->bindValue(':book', $book, PDO::PARAM_STR);
