@@ -25,7 +25,6 @@ $book = $_POST['book'];
 $chapter = $_POST['chapter'];
 $verse = $_POST['verse'];
 $content = $_POST['content'];
-$topicID = $_POST['id'];
 
 $stmt = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
 $stmt->bindValue(':book', $book, PDO::PARAM_STR);
