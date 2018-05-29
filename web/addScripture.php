@@ -33,7 +33,7 @@ $stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
 $stmt->bindValue(':content', $content, PDO::PARAM_STR);
 $stmt->execute();
 
-$scriptureID = $db->lastInsertId('scripture_id_seq');
+$scriptureID = $db->lastInsertId('scriptures_id_seq');
 //var_dump($_POST);
 
 foreach ($_POST['topics'] as $topicID) {
