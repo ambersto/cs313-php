@@ -32,7 +32,7 @@ $chapter = 1;
 $verse = 11;
 $content = 'Here is test content';
 
-$stmt = $pdo->prepare('INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
+$stmt = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
 $stmt->bindValue(':book', $book, PDO::PARAM_STR);
 $stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
 $stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
@@ -42,10 +42,10 @@ $stmt->execute();
 $scriptureID = $pdo->lastInsertId('scripture_id_seq');
 
 foreach ($_POST['topics'] as $topicID) {
-	$stmt = $pdo->prepare('INSERT INTO scriptureTopics (scriptureID, topicID) VALUES (:topicID, :scriptureID)');
+	$stmt = $db->prepare('INSERT INTO scriptureTopics (scriptureID, topicID) VALUES (:topicID, :scriptureID)');
 	$stmt->bindValue(':topicID', $topicID, PDO::PARAM_INT);
 	$stmt->bindValue(':scriptureID', $scriptureID, PDO::PARAM_INT);
-	$stmt->execute();	
+	$stmt->execute();
 }
 
 ?>
