@@ -37,3 +37,23 @@ VALUES(
 	9,
 	'He is the light and the life of the world; yea, a light that is endless, that can never be darkened; yea, and also a life which is endless, that there can be no more death.'
 );
+
+
+/****************************************************************
+* Week 6
+****************************************************************/
+CREATE TABLE topics(
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE scriptureTopics(
+	id SERIAL PRIMARY KEY,
+	scriptureID SMALLINT REFERENCES scriptures(id),
+	topicID SMALLINT REFERENCES topics(id)
+);
+
+INSERT INTO topics (name) VALUES 
+('faith'),
+('sacrifice'),
+('charity');
