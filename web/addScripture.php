@@ -48,7 +48,7 @@ $query = 'SELECT book, chapter, verse, content FROM scriptures';
 foreach ($db->query($query) as $row) {
 	echo '<h2>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</h2><h3>'.$row['content'].'</h3>';
 
-	$newquery = 'SELECT t.name FROM topics INNER JOIN scriptureTopics st ON t.id=st.topicID WHERE st.scriptureID=$scriptureID';
+	$newquery = 'SELECT t.name FROM topics t INNER JOIN scriptureTopics st ON t.id=st.topicID WHERE st.scriptureID=$scriptureID';
 
 	foreach ($db->query($newquery) as $topicRow) {
 		echo '<h3>'.$topicRow['name'].'</h3>';
