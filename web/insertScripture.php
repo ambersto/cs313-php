@@ -14,6 +14,7 @@
 <input type="text" name="verse"></h3>
 <h3>Content: 
 <textarea name="content"></textarea></h3>
+<h3>
 <?php
 
 $dbUrl = getenv('DATABASE_URL');
@@ -35,8 +36,9 @@ $query = "SELECT * FROM topics";
 foreach ($db->query($query) as $row) {
 	$name = $row['name'];
 	$id = $row['id'];
-	echo '<h3><input type="checkbox" name="topics[]" value="'.$id.'">'.$name.'</h3><br/>';
+	echo '<input type="checkbox" name="topics[]" value="'.$id.'">'.$name.'<br/>';
 }
+echo "</h3>";
 ?>
 <button type="submit">Add Scripture</button>
 </form>

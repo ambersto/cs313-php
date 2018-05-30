@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-<h1>Submitted!</h1>
+<h1>Scripture List</h1>
 
 <?php
 $dbUrl = getenv('DATABASE_URL');
@@ -37,11 +37,22 @@ $scriptureID = $db->lastInsertId('scriptures_id_seq');
 //var_dump($_POST);
 
 foreach ($_POST['topics'] as $topicID) {
-	echo "I am here :)";
 	$stmt = $db->prepare('INSERT INTO scriptureTopics (scriptureID, topicID) VALUES (:scriptureID, :topicID)');
 	$stmt->bindValue(':scriptureID', $scriptureID, PDO::PARAM_INT);
 	$stmt->bindValue(':topicID', $topicID, PDO::PARAM_INT);
 	$stmt->execute();
+}
+
+$query = 'SELECT * FROM scriptures';
+
+foreach ($db->query($query) as $row) {
+	echo '<h2>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</h2><h3>'.$row['content'].'</h3>';
+
+	$newquery = 'SELECT t.name FROM topics INNER JOIN scriptureTopics st ON t.id=st.topicID INNER JOIN scriptures s ON st.scriptureID=$scriptureID';
+	foreach ($db->query($newquery) as $topicRow) {
+		echo '<h3>'.$topicRow['name'].'</h3>';
+	}
+	echo '<br/>';
 }
 
 ?>
