@@ -43,12 +43,13 @@ foreach ($_POST['topics'] as $topicID) {
 	$stmt->execute();
 }
 
-$query = 'SELECT book, chapter, verse, content FROM scriptures';
+$query = 'SELECT id, book, chapter, verse, content FROM scriptures';
 
 foreach ($db->query($query) as $row) {
 	echo '<h2>'.$scriptureID.' '.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</h2><h3>'.$row['content'].'</h3>';
 
-	$newquery = 'SELECT t.name FROM topics t INNER JOIN scriptureTopics st ON t.id=st.topicID WHERE st.scriptureID=$scriptureID';
+	$newScriptureID = $row['id'];
+	$newquery = 'SELECT t.name FROM topics t INNER JOIN scriptureTopics st ON t.id=st.topicID WHERE st.scriptureID=$newScriptureID';
 
 	foreach ($db->query($newquery) as $topicRow) {
 		echo '<h3>'.$topicRow['name'].'</h3>';
