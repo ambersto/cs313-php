@@ -48,10 +48,11 @@ $query = 'SELECT id, book, chapter, verse, content FROM scriptures';
 foreach ($db->query($query) as $row) {
 	echo '<h2>'.$row['id'].' '.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</h2><h3>'.$row['content'].'</h3>';
 
-	$newScriptureID = $row['id'];
-	$newquery = 'SELECT t.name FROM topics t INNER JOIN scriptureTopics st ON t.id=st.topicID WHERE st.scriptureID=$newScriptureID';
+	$stmtTopics = $db->prepare('SELECT name FROM topics t INNER JOIN scriptureTopics st ON t.id=st.topicID WHERE st.scriptureID=:scriptureID');
+	$stmtTopics->bindValue(':scriptureID', $row['id']);
+	$stmtTopics->execute();
 
-	foreach ($db->query($newquery) as $topicRow) {
+	while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC)) {
 		echo '<h3>'.$topicRow['name'].'</h3>';
 	}
 
