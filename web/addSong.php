@@ -87,6 +87,9 @@ function test_input($data) {
   return $data;
 }
 
+
+var_dump($_POST);
+
 // Insert info into database
 $composerQuery = "SELECT * FROM composer";
 
@@ -95,8 +98,6 @@ foreach ($db->query($query) as $row) {
 		$composerID = $row['id'];
 	}
 }
-
-var_dump($_POST);
 
 if(!isset($composerID)) {
 	$stmt = $db->prepare('INSERT INTO composer (firstName,lastName) VALUES (:firstName, :lastName)');
