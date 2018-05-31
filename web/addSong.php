@@ -17,10 +17,38 @@
 
 <?php
 
-echo "<h3>" . test_input($_POST["songTitle"]) . 
-"<br>By " . test_input($_POST["composerFirstName"]) . " " . test_input($_POST["composerLastName"]) . 
-"<br>Type: " . test_input($_POST["songType"]) . 
-"<br>Voice part(s): " . test_input($_POST["voiceParts"]) . "</h3>";
+$songTitle = test_input($_POST["songTitle"]);
+$composerFirstName = test_input($_POST["composerFirstName"]);
+$composerLastName = test_input($_POST["composerLastName"]);
+$songType = $_POST["songType"];
+$isSoprano;
+$isAlto;
+$isTenor;
+$isBass;
+
+echo "<h3>$songTitle<br>
+	By $composerFirstName $composerLastName<br>
+	Type: $songType<br>
+	Voice part(s): ";
+
+if (isset($_POST['isSoprano'])) {
+	$isSoprano = true;
+	echo "S";
+}
+if (isset($_POST['isAlto'])) {
+	$isAlto = true;
+	echo "A";
+}
+if (isset($_POST['isTenor'])) {
+	$isTenor = true;
+	echo "T";
+}
+if (isset($_POST['isBass'])) {
+	$isBass = true;
+	echo "B";
+}
+
+echo "</h3>";
 
 function test_input($data) {
   $data = trim($data);
