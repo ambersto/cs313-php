@@ -28,16 +28,16 @@
 <input type="text" name="composerLastName"></h3><br>
 
 <h3>Type of song:<br>
-<input type="radio" name="songType" value="Choral"> Choral<br>
-<input type="radio" name="songType" value="Solo"> Solo<br>
-<input type="radio" name="songType" value="Duet"> Duet<br>
-<input type="radio" name="songType" value="Group"> Group<br></h3>
+<input type="radio" name="songType" value="1"> Choral<br>
+<input type="radio" name="songType" value="2"> Solo<br>
+<input type="radio" name="songType" value="3"> Duet<br>
+<input type="radio" name="songType" value="4"> Group</h3><br>
 
 <h3>Voice parts:<br>
 <input type="checkbox" name="isSoprano"> Soprano<br>
 <input type="checkbox" name="isAlto"> Alto<br>
 <input type="checkbox" name="isTenor"> Tenor<br>
-<input type="checkbox" name="isBass"> Bass<br></h3>
+<input type="checkbox" name="isBass"> Bass</h3><br>
 
 <h3><button type="submit">Add Song</button></h3>
 </form>

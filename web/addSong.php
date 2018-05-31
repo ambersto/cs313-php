@@ -104,10 +104,10 @@ if(!isset($composerID)) {
 	$composerID = $db->lastInsertId('composer_id_seq');
 }
 
-$stmt = $db->prepare('INSERT INTO song (title, composerID, typeID, isSoprano, isAlto, isTenor, isBass) VALUES (:title, :composerID, (SELECT id FROM type WHERE name=:type), :isSoprano, :isAlto, :isTenor, :isBass)');
+$stmt = $db->prepare('INSERT INTO song (title, composerID, typeID, isSoprano, isAlto, isTenor, isBass) VALUES (:title, :composerID, :type, :isSoprano, :isAlto, :isTenor, :isBass)');
 $stmt->bindValue(':title', $songTitle, PDO::PARAM_STR);
 $stmt->bindValue(':composerID', $composerID, PDO::PARAM_INT);
-$stmt->bindValue(':type', $songType, PDO::PARAM_STR);
+$stmt->bindValue(':type', $songType, PDO::PARAM_INT);
 $stmt->bindValue(':isSoprano', $isSoprano, PDO::PARAM_BOOL);
 $stmt->bindValue(':isAlto', $isAlto, PDO::PARAM_BOOL);
 $stmt->bindValue(':isTenor', $isTenor, PDO::PARAM_BOOL);
