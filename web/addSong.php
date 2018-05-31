@@ -93,7 +93,7 @@ var_dump($_POST);
 // Insert info into database
 $composerQuery = "SELECT * FROM composer";
 
-foreach ($db->query($query) as $row) {
+foreach ($db->query($composerQuery) as $row) {
 	if($row['firstname']==$composerFirstName && $row['lastname']==$composerLastName) {
 		$composerID = $row['id'];
 	}
