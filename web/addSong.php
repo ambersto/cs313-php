@@ -91,10 +91,12 @@ function test_input($data) {
 $composerQuery = "SELECT * FROM composer";
 
 foreach ($db->query($query) as $row) {
-	if($row['firstName']==$composerFirstName && $row['lastName']==$composerLastName) {
+	if($row['firstname']==$composerFirstName && $row['lastname']==$composerLastName) {
 		$composerID = $row['id'];
 	}
 }
+
+var_dump($_POST);
 
 if(!isset($composerID)) {
 	$stmt = $db->prepare('INSERT INTO composer (firstName,lastName) VALUES (:firstName, :lastName)');
@@ -104,10 +106,10 @@ if(!isset($composerID)) {
 	$composerID = $db->lastInsertId('composer_id_seq');
 }
 
-$stmt = $db->prepare('INSERT INTO song (title, composerID, typeID, isSoprano, isAlto, isTenor, isBass) VALUES (:title, :composerID, :type, :isSoprano, :isAlto, :isTenor, :isBass)');
+$stmt = $db->prepare('INSERT INTO song (title, composerID, typeID, isSoprano, isAlto, isTenor, isBass) VALUES (:title, :composerID, (SELECT id FROM type WHERE name=:type), :isSoprano, :isAlto, :isTenor, :isBass)');
 $stmt->bindValue(':title', $songTitle, PDO::PARAM_STR);
 $stmt->bindValue(':composerID', $composerID, PDO::PARAM_INT);
-$stmt->bindValue(':type', $songType, PDO::PARAM_INT);
+$stmt->bindValue(':type', $songType, PDO::PARAM_STR);
 $stmt->bindValue(':isSoprano', $isSoprano, PDO::PARAM_BOOL);
 $stmt->bindValue(':isAlto', $isAlto, PDO::PARAM_BOOL);
 $stmt->bindValue(':isTenor', $isTenor, PDO::PARAM_BOOL);
