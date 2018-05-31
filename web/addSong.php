@@ -87,9 +87,6 @@ function test_input($data) {
   return $data;
 }
 
-
-var_dump($_POST);
-
 // Insert info into database
 $composerQuery = "SELECT * FROM composer";
 
