@@ -50,10 +50,10 @@ switch ($editing) {
     case "title":
         $newTitle = $_POST['songTitle'];
         if($newTitle!=$songTitle){
-            $stmt = $db->prepare("UPDATE song SET title = ':title' WHERE id=:id");
-            $stmt->bindValue(':title', $newTitle, PDO::PARAM_INT);
-            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-            $stmt->execute();
+            $titleStmt = $db->prepare("UPDATE song SET title = ':title' WHERE id=:id");
+            $titleStmt->bindValue(':title', $newTitle, PDO::PARAM_INT);
+            $titleStmt->bindValue(':id', $id, PDO::PARAM_INT);
+            $titleStmt->execute();
         }
         break;
     case "composer":
