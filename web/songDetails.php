@@ -48,12 +48,12 @@ foreach ($db->query($query) as $row) {
 	echo '</li></ul>';
 }
 
-?>
-
-<br><h3>
+echo '<br><h3>
 <form method="post" action="editSong.php">
-<button type="submit" name="id" value="14">Edit Song</button>
-</form></h3>
+<button type="submit" name="id" value="$id">Edit Song</button>
+</form></h3>';
+
+?>
 
 </body>
 </html>
