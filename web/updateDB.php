@@ -45,26 +45,15 @@ foreach ($rows as $row) {
 	$isBass = $row['isbass'];
 }
 
-// Update information in database
-switch ($editing) {
-    case "title":
-        $newTitle = $_POST['songTitle'];
-        if($newTitle!=$songTitle){
-            $titleStmt = $db->prepare('UPDATE song SET title=:title WHERE id=:id');
-            $titleStmt->bindValue(':title', $newTitle, PDO::PARAM_INT);
-            $titleStmt->bindValue(':id', $id, PDO::PARAM_INT);
-            $titleStmt->execute();
-        }
-        break;
-    case "composer":
-        break;
-    case "type":
-        break;
-    case "parts":
-        break;
-    default:
-        break;
+// Update song title
+$newTitle = $_POST['songTitle'];
+if(isset($newTitle) && $newTitle!=$songTitle) {
+    $titleStmt = $db->prepare('UPDATE song SET title=:title WHERE id=:id');
+    $titleStmt->bindValue(':title', $newTitle, PDO::PARAM_INT);
+    $titleStmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $titleStmt->execute();
 }
+
 
 header("Location: songDetails.php?id=$id"); 
 exit;
