@@ -56,25 +56,32 @@ foreach ($rows as $row) {
 	$isBass = $row['isBass'];
 }
 
-echo '<h2>';
+echo '<form method="post" action="songDetails.php?id='. $id .'">';
 switch ($editing) {
     case "title":
-        echo "Editing song title.</h2>";
-        echo '<form method="post" action="songDetails.php?id='. $id .'"><h3>Title of song: 
+        echo "<h2>Editing song title.</h2><br>";
+        echo '<h3>Title of song: 
         	<input type="text" name="songTitle" value="'. $songTitle .'"></h3>';
         break;
     case "composer":
-        echo "Editing composer's name.</h2>";
+        echo "<h2>Editing composer's name.</h2>";
+        echo '<h3>Composer\'s first name: 
+        	<input type="text" name="composerFirstName" value="'. $composerFirstName .'"></h3>';        
+        echo '<h3>Composer\'s last name: 
+        	<input type="text" name="composerLastName" value="'. $composerLastName .'"></h3>';
         break;
     case "type":
-        echo "Editing song type.</h2>";
+        echo "<h2>Editing song type.</h2>";
         break;
     case "parts":
-        echo "Editing voice parts.</h2>";
+        echo "<h2>Editing voice parts.</h2>";
         break;
     default:
-        echo "No part was selected to edit.</h2>";
+        echo "<h2>No part was selected to edit.</h2>";
 }
+
+echo '<h3><button type="submit">Submit</button></h3>
+	</form>';
 ?>
 
 </body>
