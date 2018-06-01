@@ -12,6 +12,7 @@
 <a href="searchMusic.php"><div id="button">Search Music</div></a>
 <a href="enterSong.php"><div id="button" class="last">Add Songs</div></a>
 <?php
+// Connect to database
 $dbUrl = getenv('DATABASE_URL');
 
 $dbopts = parse_url($dbUrl);
@@ -26,13 +27,41 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+// Initialize variables
 $id = $_POST['id'];
 $editing = $_POST['editing'];
+$songTitle;
+$composerFirstName;
+$composerLastName;
+$songType;
+$isSoprano;
+$isAlto;
+$isTenor;
+$isBass;
+$composerID;
+
+$stmt = $db->prepare('SELECT s.title, c.firstName, c.lastName, t.name, s.isSoprano, s.isAlto, s.isTenor, s.isBass FROM song s INNER JOIN composer c ON s.composerID=c.id INNER JOIN type t ON s.typeID=t.id WHERE s.id=:id');
+$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($rows as $row) {
+	$songTitle = $row['title'];
+	$composerFirstName = $row['firstName'];
+	$composerLastName = $row['lastName'];
+	$songType = $row['name'];
+	$isSoprano = $row['isSoprano'];
+	$isAlto = $row['isAlto'];
+	$isTenor = $row['isTenor'];
+	$isBass = $row['isBass'];
+}
 
 echo '<h2>';
 switch ($editing) {
     case "title":
         echo "Editing song title.</h2>";
+        echo '<form method="post" action="songDetails.php?id='. $id .'"<h3>Title of song: 
+        	<input type="text" name="songTitle">'. $songTitle .'</h3>';
         break;
     case "composer":
         echo "Editing composer's name.</h2>";
