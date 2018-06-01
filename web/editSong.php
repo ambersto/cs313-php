@@ -47,13 +47,13 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($rows as $row) {
 	$songTitle = $row['title'];
-	$composerFirstName = $row['firstName'];
-	$composerLastName = $row['lastName'];
+	$composerFirstName = $row['firstname'];
+	$composerLastName = $row['lastname'];
 	$songType = $row['name'];
-	$isSoprano = $row['isSoprano'];
-	$isAlto = $row['isAlto'];
-	$isTenor = $row['isTenor'];
-	$isBass = $row['isBass'];
+	$isSoprano = $row['issoprano'];
+	$isAlto = $row['isalto'];
+	$isTenor = $row['istenor'];
+	$isBass = $row['isbass'];
 }
 
 echo '<form method="post" action="songDetails.php?id='. $id .'">';
@@ -66,7 +66,7 @@ switch ($editing) {
     case "composer":
         echo "<h2>Editing composer's name.</h2>";
         echo '<h3>Composer\'s first name: 
-        	<input type="text" name="composerFirstName" value="'. $composerFirstName .'"></h3>';        
+        	<input type="text" name="composerFirstName" value="'. $composerFirstName .'"></h3>';
         echo '<h3>Composer\'s last name: 
         	<input type="text" name="composerLastName" value="'. $composerLastName .'"></h3>';
         break;
