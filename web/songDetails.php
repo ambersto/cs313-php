@@ -61,7 +61,7 @@ else {
 	<li><input type="radio" name="editing" value="title"> Song Title</li>
 	<li><input type="radio" name="editing" value="composer"> Composer\'s Name</li>
 	<li><input type="radio" name="editing" value="type"> Type</li>
-	<li><input type="radio" name="editing" value="parts"> Voice Parts</li>
+	<li><input type="radio" name="editing" value="parts"> Voice Parts</li></ul>
 	<h3><button type="submit" name="id" value="'. $id .'">Edit Song</button></h3>
 	</form>';
 }
