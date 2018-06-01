@@ -61,7 +61,7 @@ switch ($editing) {
     case "title":
         echo "Editing song title.</h2>";
         echo '<form method="post" action="songDetails.php?id='. $id .'"<h3>Title of song: 
-        	<input type="text" name="songTitle">'. $songTitle .'</h3>';
+        	<input type="text" name="songTitle">'. $songTitle .'</input></h3>';
         break;
     case "composer":
         echo "Editing composer's name.</h2>";
