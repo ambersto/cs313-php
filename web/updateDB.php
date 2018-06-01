@@ -78,8 +78,8 @@ if(isset($newLastName) && ($newLastName!=$composerLastName || $newFirstName!=$co
     // Insert composer into database if not already there
     if(!isset($composerID)) {
         $composerStmt = $db->prepare('INSERT INTO composer (firstName, lastName) VALUES (:firstName, :lastName)');
-        $composerStmt->bindValue(':firstName', $composerFirstName, PDO::PARAM_STR);
-        $composerStmt->bindValue(':lastName', $composerLastName, PDO::PARAM_STR);
+        $composerStmt->bindValue(':firstName', $newFirstName, PDO::PARAM_STR);
+        $composerStmt->bindValue(':lastName', $newLastName, PDO::PARAM_STR);
         $composerStmt->execute();
         $composerID = $db->lastInsertId('composer_id_seq');
     }
@@ -131,8 +131,8 @@ if((isset($newSoprano) || isset($newAlto) || isset($newTenor) || isset($newBass)
 }
 
 
-//header("Location: songDetails.php?id=$id"); 
-//exit;
+header("Location: songDetails.php?id=$id"); 
+exit;
 
 ?>
 </body>
