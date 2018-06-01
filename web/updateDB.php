@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testing Update</title>
+</head>
+<body>
 <?php
 
 // Connect to database
@@ -53,6 +59,7 @@ if(isset($newTitle) && $newTitle!=$songTitle) {
     $titleStmt->execute();
 }
 
+var_dump($_POST);
 // Update composer
 $newFirstName = $_POST['composerFirstName'];
 $newLastName = $_POST['composerLastName'];
@@ -68,7 +75,7 @@ if(isset($newLastName) && ($newLastName!=$composerLastName || $newFirstName!=$co
 
     // Insert composer into database if not already there
     if(!isset($composerID)) {
-        $composerStmt = $db->prepare('INSERT INTO composer (firstName,lastName) VALUES (:firstName, :lastName)');
+        $composerStmt = $db->prepare('INSERT INTO composer (firstName, lastName) VALUES (:firstName, :lastName)');
         $composerStmt->bindValue(':firstName', $composerFirstName, PDO::PARAM_STR);
         $composerStmt->bindValue(':lastName', $composerLastName, PDO::PARAM_STR);
         $composerStmt->execute();
@@ -120,7 +127,9 @@ if((isset($newSoprano) || isset($newAlto) || isset($newTenor) || isset($newBass)
 }
 
 
-header("Location: songDetails.php?id=$id"); 
-exit;
+//header("Location: songDetails.php?id=$id"); 
+//exit;
 
 ?>
+</body>
+</html>
