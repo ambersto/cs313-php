@@ -59,7 +59,7 @@ foreach ($rows as $row) {
 }
 
 // Display appropriate forms depending on what the user wants to edit
-echo '<form method="post" action="songDetails.php?id='. $id .'">';
+echo '<form method="post" action="updateDB.php">';
 switch ($editing) {
     case "title":
         echo "<h2>Editing song title.</h2><br>";
