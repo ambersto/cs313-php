@@ -48,10 +48,18 @@ foreach ($db->query($query) as $row) {
 	echo '</li></ul>';
 }
 
-echo '<br><h3>
-<form method="post" action="editSong.php">
-<button type="submit" name="id" value="'. $id .'">Edit Song</button>
-</form></h3>';
+if(!isset($_POST['id'])) {
+	echo '<br><h3>
+	<form method="post" action="songDetails.php?id=\''.$id.'\'">
+	<button type="submit" name="id" value="'. $id .'">Edit Song</button>
+	</form></h3>';
+}
+else {
+	echo '<br><h3>
+	<form method="post" action="editSong.php">
+	<button type="submit" name="id" value="'. $id .'">Edit Song</button>
+	</form></h3>';
+}
 
 ?>
 
