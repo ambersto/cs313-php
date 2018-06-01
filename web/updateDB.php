@@ -48,9 +48,75 @@ foreach ($rows as $row) {
 $newTitle = $_POST['songTitle'];
 if(isset($newTitle) && $newTitle!=$songTitle) {
     $titleStmt = $db->prepare('UPDATE song SET title=:title WHERE id=:id');
-    $titleStmt->bindValue(':title', $newTitle, PDO::PARAM_INT);
+    $titleStmt->bindValue(':title', $newTitle, PDO::PARAM_STR);
     $titleStmt->bindValue(':id', $id, PDO::PARAM_INT);
     $titleStmt->execute();
+}
+
+// Update composer
+$newFirstName = $_POST['composerFirstName'];
+$newLastName = $_POST['composerLastName'];
+if(isset($newLastName) && ($newLastName!=$composerLastName || $newFirstName!=$composerFirstName) {
+
+    // Check if composer is in database
+    $composerQuery = "SELECT * FROM composer";
+    foreach ($db->query($composerQuery) as $row) {
+        if($row['firstname']==$composerFirstName && $row['lastname']==$composerLastName) {
+            $composerID = $row['id'];
+        }
+    }
+
+    // Insert composer into database if not already there
+    if(!isset($composerID)) {
+        $composerStmt = $db->prepare('INSERT INTO composer (firstName,lastName) VALUES (:firstName, :lastName)');
+        $composerStmt->bindValue(':firstName', $composerFirstName, PDO::PARAM_STR);
+        $composerStmt->bindValue(':lastName', $composerLastName, PDO::PARAM_STR);
+        $composerStmt->execute();
+        $composerID = $db->lastInsertId('composer_id_seq');
+    }
+
+    $composerIDStmt = $db->prepare('UPDATE song SET composerID=:composerID WHERE id=:id');
+    $composerIDStmt->bindValue(':composerID', $composerID, PDO::PARAM_INT);
+    $composerIDStmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $composerIDStmt->execute();
+}
+
+// Update song type
+$newType = $_POST['songType'];
+if(isset($newType) && $newType!=$songType) {
+    $typeStmt = $db->prepare('UPDATE song SET typeID=(SELECT id FROM type WHERE name=:type) WHERE id=:id');
+    $typeStmt->bindValue(':type', $newType, PDO::PARAM_STR);
+    $typeStmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $typeStmt->execute();
+}
+
+// Update voice parts
+$newSoprano = $_POST['isSoprano'];
+$newAlto = $_POST['isAlto'];
+$newTenor = $_POST['isTenor'];
+$newBass = $_POST['isBass'];
+if((isset($newSoprano) || isset($newAlto) || isset($newTenor) || isset($newBass)) && 
+    ($newSoprano!=$isSoprano || $newAlto!=$isAlto || $newTenor!=$isTenor || $newBass!=$isBass)) {
+    if (!isset($newSoprano)) {
+        $newSoprano = false;
+    }
+    if (!isset($newAlto)) {
+        $newAlto = false;
+    }
+    if (!isset($newTenor)) {
+        $newTenor = false;
+    }
+    if (!isset($newBass)) {
+        $newBass = false;
+    }
+
+    $partStmt = $db->prepare('UPDATE song SET isSoprano=:isSoprano, isAlto=:isAlto, isTenor=:isTenor, isBass=:isBass WHERE id=:id');
+    $partStmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $partStmt->bindValue(':isSoprano', $newSoprano, PDO::PARAM_BOOL);
+    $partStmt->bindValue(':isAlto', $newAlto, PDO::PARAM_BOOL);
+    $partStmt->bindValue(':isTenor', $newTenor, PDO::PARAM_BOOL);
+    $partStmt->bindValue(':isBass', $newBass, PDO::PARAM_BOOL);
+    $partStmt->execute();
 }
 
 
