@@ -60,6 +60,8 @@ if(isset($newTitle) && $newTitle!=$songTitle) {
 }
 
 var_dump($_POST);
+var_dump($composerFirstName);
+var_dump($composerLastName);
 // Update composer
 $newFirstName = $_POST['composerFirstName'];
 $newLastName = $_POST['composerLastName'];
