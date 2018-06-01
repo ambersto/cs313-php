@@ -50,10 +50,10 @@ foreach ($db->query($query) as $row) {
 
 ?>
 
-<br><br>
+<br><h3>
 <form method="post" action="editSong.php">
-<button type="submit" name="id" value="$id">Edit Song</button>
-</form>
+<button type="submit" name="id" value="14">Edit Song</button>
+</form></h3>
 
 </body>
 </html>
