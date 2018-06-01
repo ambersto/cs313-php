@@ -11,6 +11,7 @@
 <a href="viewPerformances.php"><div id="button">View Performances</div></a>
 <a href="searchMusic.php"><div id="button">Search Music</div></a>
 <a href="enterSong.php"><div id="button" class="last">Add Songs</div></a>
+
 <?php
 // Connect to database
 $dbUrl = getenv('DATABASE_URL');
@@ -40,6 +41,7 @@ $isTenor;
 $isBass;
 $composerID;
 
+// Retrieve song info from database
 $stmt = $db->prepare('SELECT s.title, c.firstName, c.lastName, t.name, s.isSoprano, s.isAlto, s.isTenor, s.isBass FROM song s INNER JOIN composer c ON s.composerID=c.id INNER JOIN type t ON s.typeID=t.id WHERE s.id=:id');
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
