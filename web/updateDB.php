@@ -84,6 +84,8 @@ if(isset($newLastName) && ($newLastName!=$composerLastName || $newFirstName!=$co
         $composerID = $db->lastInsertId('composer_id_seq');
     }
 
+    var_dump($composerID);
+
     $composerIDStmt = $db->prepare('UPDATE song SET composerID=:composerID WHERE id=:id');
     $composerIDStmt->bindValue(':composerID', $composerID, PDO::PARAM_INT);
     $composerIDStmt->bindValue(':id', $id, PDO::PARAM_INT);
