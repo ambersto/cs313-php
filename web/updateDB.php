@@ -56,7 +56,7 @@ if(isset($newTitle) && $newTitle!=$songTitle) {
 // Update composer
 $newFirstName = $_POST['composerFirstName'];
 $newLastName = $_POST['composerLastName'];
-if(isset($newLastName) && ($newLastName!=$composerLastName || $newFirstName!=$composerFirstName) {
+if(isset($newLastName) && ($newLastName!=$composerLastName || $newFirstName!=$composerFirstName)) {
 
     // Check if composer is in database
     $composerQuery = "SELECT * FROM composer";
