@@ -56,6 +56,7 @@ foreach ($rows as $row) {
 	$isBass = $row['isbass'];
 }
 
+// Display appropriate forms depending on what the user wants to edit
 echo '<form method="post" action="songDetails.php?id='. $id .'">';
 switch ($editing) {
     case "title":
@@ -64,23 +65,33 @@ switch ($editing) {
         	<input type="text" name="songTitle" value="'. $songTitle .'"></h3>';
         break;
     case "composer":
-        echo "<h2>Editing composer's name.</h2>";
+        echo "<h2>Editing composer's name.</h2><br>";
         echo '<h3>Composer\'s first name: 
         	<input type="text" name="composerFirstName" value="'. $composerFirstName .'"></h3>';
         echo '<h3>Composer\'s last name: 
         	<input type="text" name="composerLastName" value="'. $composerLastName .'"></h3>';
         break;
     case "type":
-        echo "<h2>Editing song type.</h2>";
+        echo "<h2>Editing song type.</h2><br>";
+        echo '<h3>Type of song:<br>
+			<input type="radio" name="songType" value="Choral"> Choral<br>
+			<input type="radio" name="songType" value="Solo"> Solo<br>
+			<input type="radio" name="songType" value="Duet"> Duet<br>
+			<input type="radio" name="songType" value="Group"> Group</h3>';
         break;
     case "parts":
-        echo "<h2>Editing voice parts.</h2>";
+        echo "<h2>Editing voice parts.</h2><br>";
+        echo '<h3>Voice parts:<br>
+			<input type="checkbox" name="isSoprano"> Soprano<br>
+			<input type="checkbox" name="isAlto"> Alto<br>
+			<input type="checkbox" name="isTenor"> Tenor<br>
+			<input type="checkbox" name="isBass"> Bass</h3>';
         break;
     default:
         echo "<h2>No part was selected to edit.</h2>";
 }
 
-echo '<h3><button type="submit">Submit</button></h3>
+echo '<br><h3><button type="submit" name="editing" value="'. $editing .'">Submit</button></h3>
 	</form>';
 ?>
 
