@@ -27,25 +27,24 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $id = $_POST['id'];
-$query = ("SELECT s.title, c.firstName, c.lastName, t.name, s.isSoprano, s.isAlto, s.isTenor, s.isBass FROM song s INNER JOIN composer c ON s.composerID=c.id INNER JOIN type t ON s.typeID=t.id WHERE s.id=$id");
+$editing = $_POST['editing'];
 
-foreach ($db->query($query) as $row) {
-	echo '<h2>' . $row['title'] . '</h2>
-	<h3>By ' . $row['firstname'] . ' ' . $row['lastname'] . '</h3>
-	<ul style="margin-left:250px; list-style-type:none;"><li>Type: ' . $row['name'] . '</li><li>Voice part(s): ';
-	if($row['issoprano']) {
-		echo 'S';
-	}
-	if($row['isalto']) {
-		echo 'A';
-	}
-	if($row['istenor']) {
-		echo 'T';
-	}
-	if($row['isbass']) {
-		echo 'B';
-	}
-	echo '</li></ul>';
+echo '<h2>';
+switch ($editing) {
+    case "title":
+        echo "Editing song title.</h2>";
+        break;
+    case "composer":
+        echo "Editing composer's name.</h2>";
+        break;
+    case "type":
+        echo "Editing song type.</h2>";
+        break;
+    case "parts":
+        echo "Editing voice parts.</h2>";
+        break;
+    default:
+        echo "No part was selected to edit.</h2>";
 }
 ?>
 

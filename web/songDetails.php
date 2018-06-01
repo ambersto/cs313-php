@@ -49,14 +49,18 @@ foreach ($db->query($query) as $row) {
 }
 
 if(!isset($_POST['id'])) {
-	echo '<br><h3>
+	echo '<h3>
 	<form method="post" action="songDetails.php?id='.$id.'">
 	<button type="submit" name="id" value="'. $id .'">Edit Song</button>
 	</form></h3>';
 }
 else {
-	echo '<br><h3>
-	<form method="post" action="editSong.php">
+	echo '<br><h2>Which part would you like to edit?</h2>
+	<h3><form method="post" action="editSong.php">
+	<input type="radio" name="editing" value="title"> Song Title<br>
+	<input type="radio" name="editing" value="composer"> Composer\'s Name<br>
+	<input type="radio" name="editing" value="type"> Type<br>
+	<input type="radio" name="editing" value="parts"> Voice Parts</h3><br>
 	<button type="submit" name="id" value="'. $id .'">Edit Song</button>
 	</form></h3>';
 }
