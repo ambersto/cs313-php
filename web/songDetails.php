@@ -56,13 +56,14 @@ if(!isset($_POST['id'])) {
 }
 else {
 	echo '<br><h2>Which part would you like to edit?</h2>
-	<h3><form method="post" action="editSong.php">
-	<input type="radio" name="editing" value="title"> Song Title<br>
-	<input type="radio" name="editing" value="composer"> Composer\'s Name<br>
-	<input type="radio" name="editing" value="type"> Type<br>
-	<input type="radio" name="editing" value="parts"> Voice Parts</h3><br>
-	<button type="submit" name="id" value="'. $id .'">Edit Song</button>
-	</form></h3>';
+	<form method="post" action="editSong.php">
+	<ul style="margin-left:250px; list-style-type:none;">
+	<li><input type="radio" name="editing" value="title"> Song Title</li>
+	<li><input type="radio" name="editing" value="composer"> Composer\'s Name</li>
+	<li><input type="radio" name="editing" value="type"> Type</li>
+	<li><input type="radio" name="editing" value="parts"> Voice Parts</li>
+	<h3><button type="submit" name="id" value="'. $id .'">Edit Song</button></h3>
+	</form>';
 }
 
 ?>
