@@ -17,7 +17,6 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Initialize variables
 $id = $_POST['id'];
-$editing = $_POST['editing'];
 $songTitle;
 $composerFirstName;
 $composerLastName;

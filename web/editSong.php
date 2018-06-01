@@ -93,7 +93,7 @@ switch ($editing) {
         echo "<h2>No part was selected to edit.</h2>";
 }
 
-echo '<br><h3><button type="submit" name="editing" value="'. $id .'">Submit</button></h3>
+echo '<br><h3><button type="submit" name="id" value="'. $id .'">Submit</button></h3>
 	</form>';
 ?>
 
