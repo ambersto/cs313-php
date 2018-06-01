@@ -52,7 +52,7 @@ foreach ($db->query($query) as $row) {
 
 <br><br>
 <form method="post" action="editSong.php">
-<button type="submit" name="songID" value="$id"></button>
+<button type="submit" name="id" value="$id">Edit Song</button>
 </form>
 
 </body>
