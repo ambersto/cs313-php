@@ -53,6 +53,7 @@ switch ($editing) {
             $stmt = $db->prepare("UPDATE song SET title = ':title' WHERE id=:id");
             $stmt->bindValue(':title', $newTitle, PDO::PARAM_INT);
             $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
         }
         break;
     case "composer":
