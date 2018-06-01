@@ -70,7 +70,7 @@ if(isset($newLastName) && ($newLastName!=$composerLastName || $newFirstName!=$co
     // Check if composer is in database
     $composerQuery = "SELECT * FROM composer";
     foreach ($db->query($composerQuery) as $row) {
-        if($row['firstname']==$composerFirstName && $row['lastname']==$composerLastName) {
+        if($row['firstname']==$newFirstName && $row['lastname']==$newLastName) {
             $composerID = $row['id'];
         }
     }
