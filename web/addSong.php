@@ -12,7 +12,7 @@
 <a href="searchMusic.php"><div id="button">Search Music</div></a>
 <a href="enterSong.php"><div id="button" class="last">Add Songs</div></a>
 
-<h2>This page is a work in progress. The functionality to add your song has not yet been implemented. Below is the information you entered.</h2>
+<h2>Song has been added. Below is the information you entered.</h2>
 <br><br>
 
 <?php
@@ -87,15 +87,15 @@ function test_input($data) {
   return $data;
 }
 
-// Insert info into database
+// Check if composer is in database
 $composerQuery = "SELECT * FROM composer";
-
 foreach ($db->query($composerQuery) as $row) {
 	if($row['firstname']==$composerFirstName && $row['lastname']==$composerLastName) {
 		$composerID = $row['id'];
 	}
 }
 
+// Insert composer into database if not already there
 if(!isset($composerID)) {
 	$stmt = $db->prepare('INSERT INTO composer (firstName,lastName) VALUES (:firstName, :lastName)');
 	$stmt->bindValue(':firstName', $composerFirstName, PDO::PARAM_STR);
