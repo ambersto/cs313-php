@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h1>Sign in!</h1>
-	<form action="welcome.php" method="post">
+	<form action="verify.php" method="post">
 		username:<input type="text" name="username"><br>
 		password:<input type="text" name="password">
 		<button type="submit">Submit</button>
