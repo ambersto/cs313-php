@@ -15,9 +15,3 @@ $stmt->execute();
 header("Location: welcome.php");
 exit;
 ?>
-
-/*CREATE TABLE person (
-	id SERIAL PRIMARY KEY,
-	username VARCHAR(50) UNIQUE,
-	password VARCHAR(50)
-);*/
