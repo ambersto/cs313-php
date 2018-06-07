@@ -6,7 +6,7 @@
 <body>
 	<h1>Sign up!</h1>
 	<form action="create.php" method="post">
-		username:<input type="text" name="username">
+		username:<input type="text" name="username"><br>
 		password:<input type="text" name="password">
 		<button type="submit">Submit</button>
 	</form>

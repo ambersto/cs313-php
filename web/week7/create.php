@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $pass = $_POST["password"];
 $user = $_POST["username"];
 
@@ -15,6 +17,8 @@ $stmt = $db->prepare("INSERT INTO person (username,password) VALUES (:username,:
 $stmt->bindValue(":username",$user,PDO::PARAM_STR);
 $stmt->bindValue(":password",$hash,PDO::PARAM_STR);
 $stmt->execute();
+
+$_SESSION['user'] = $user;
 
 header("Location: welcome.php");
 exit;

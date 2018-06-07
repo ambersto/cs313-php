@@ -1,5 +1,11 @@
 <?php
-echo "<h1>hello</h1>";
 session_start();
-echo $_SESSION['user'];
+
+if(isset($_SESSION['user'])) {
+	echo "<h1>Welcome" . $_SESSION['user'] . "</h1>";
+}
+else {
+	header(Location: signIn.php);
+	exit;
+}
 ?>

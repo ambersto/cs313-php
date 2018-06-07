@@ -16,8 +16,11 @@ $row = $stmt->fetch();
 $dbpass = $row["password"];
 if(password_verify($pass, $dbpass)) {
 	$_SESSION['user'] = $user;
-	
+	header("Location: welcome.php");
 } 
-header("Location: welcome.php");
+else {
+	header("Location: signIn.php");
+}
+
 exit;
 ?>
