@@ -14,6 +14,5 @@
 <h2>This is the an electronic compilation of the music for From the Heart choir. Select an option from the menu to the left.</h2>
 
 
-
 </body>
 </html>
